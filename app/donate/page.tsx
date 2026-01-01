@@ -5,165 +5,302 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Check } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ArrowLeft, ArrowRight, Heart } from "lucide-react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
+import Image from "next/image"
 
 export default function DonatePage() {
   const searchParams = useSearchParams()
-  const campaignId = searchParams.get("campaign")
-  const campaignTitle = searchParams.get("title") || "General Fund"
-  const campaignOrg = searchParams.get("org") || "FUNDFLOW"
+  const initialCampaign = searchParams.get("title") || "Water Scarcity In Maiduguri: Lifeline Ramadan Campaign 2021"
 
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [selectedCampaign, setSelectedCampaign] = useState(initialCampaign)
+  const [donationType, setDonationType] = useState("general")
+  const [frequency, setFrequency] = useState("once")
   const [amount, setAmount] = useState<number | null>(null)
   const [customAmount, setCustomAmount] = useState("")
-  const [paymentMethod, setPaymentMethod] = useState<string>("")
+  const [email, setEmail] = useState("")
+  const [currency, setCurrency] = useState("LE")
 
-  const presetAmounts = [50, 100, 250, 500, 1000]
-  const paymentMethods = [
+  const campaigns = [
     {
-      id: "orange",
-      name: "Orange Money",
-      logo: "/images/orange-money-logo.png",
+      title: "Water Scarcity In Maiduguri: Lifeline Ramadan Campaign 2021",
+      date: "23 Sep, 2021",
+      readTime: "2 min read",
+      image: "/campaign-water-scarcity.jpg",
     },
     {
-      id: "salon",
-      name: "Salon Payment Switch",
-      logo: "/images/salon-payment-logo.png",
+      title: "Emergency Relief for Sumatra Flood Victims",
+      date: "15 Oct, 2021",
+      readTime: "3 min read",
+      image: "/campaign-flood-relief.jpg",
     },
     {
-      id: "usdc",
-      name: "USDC (Solana)",
-      logo: "/images/usdc-solana-logo.png",
-    },
-    {
-      id: "card",
-      name: "Bank / Mastercard",
-      logo: "/images/mastercard-logo.png",
+      title: "Support Evacuation After Mount Eruption",
+      date: "28 Nov, 2021",
+      readTime: "2 min read",
+      image: "/campaign-volcano-relief.jpg",
     },
   ]
+
+  const presetAmounts = [10, 50, 100, 200]
+
+  const handleSlideChange = (direction: "prev" | "next") => {
+    if (direction === "next") {
+      setCurrentSlide((prev) => (prev + 1) % campaigns.length)
+    } else {
+      setCurrentSlide((prev) => (prev - 1 + campaigns.length) % campaigns.length)
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
       <Navigation />
 
       <div className="container mx-auto px-4 pt-32 pb-20">
+        {/* Back Button - Arrow Only */}
         <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8">
-          <ArrowLeft className="h-5 w-5" />
+          <ArrowLeft className="h-6 w-6" />
         </Link>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8 p-6 bg-white border-2 border-black rounded-3xl">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#c8ff5c] rounded-full flex items-center justify-center border-2 border-black flex-shrink-0">
-                <span className="text-xl">❤️</span>
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          {/* Left Side - Campaign Carousel */}
+          <div className="space-y-8">
+            <div className="relative">
+              {/* Campaign Carousel */}
+              <div className="relative bg-white border-2 border-black rounded-3xl overflow-hidden">
+                <div className="relative h-[500px]">
+                  <Image
+                    src={campaigns[currentSlide].image || "/placeholder.svg?height=500&width=600"}
+                    alt={campaigns[currentSlide].title}
+                    fill
+                    className="object-cover"
+                  />
+
+                  {/* Carousel Controls */}
+                  <button
+                    onClick={() => handleSlideChange("prev")}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black shadow-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => handleSlideChange("next")}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black shadow-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+
+                  {/* Campaign Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#c8ff5c] p-6 border-t-2 border-black">
+                    <h3 className="text-2xl font-bold mb-2">{campaigns[currentSlide].title}</h3>
+                    <div className="flex items-center gap-4 text-sm text-gray-700">
+                      <span className="flex items-center gap-1">📅 {campaigns[currentSlide].date}</span>
+                      <span className="flex items-center gap-1">⏱️ {campaigns[currentSlide].readTime}</span>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="mt-4 border-2 border-black rounded-full hover:bg-black hover:text-white transition-colors bg-transparent"
+                    >
+                      Read More →
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-gray-600 mb-1">You are donating to:</p>
-                <h3 className="text-2xl font-bold mb-1">{campaignTitle}</h3>
-                <p className="text-gray-600">{campaignOrg}</p>
+
+              {/* Slide Indicators */}
+              <div className="flex justify-center gap-2 mt-4">
+                {campaigns.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentSlide ? "w-8 bg-black" : "w-2 bg-gray-300"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Make a Donation</h1>
-          <p className="text-xl text-gray-600 mb-12">
-            Your kindness can change someone's life. Every contribution matters.
-          </p>
+          {/* Right Side - Donation Form */}
+          <div className="lg:sticky lg:top-24 h-fit">
+            <Card className="p-8 border-2 border-black rounded-3xl bg-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-[#c8ff5c] rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6" fill="currentColor" />
+                </div>
+                <h2 className="text-3xl font-bold">Make An Impact Today</h2>
+              </div>
 
-          <Card className="p-8 border-2 border-black rounded-3xl bg-white">
-            {/* Amount Selection */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">Select Amount (LE)</h2>
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mb-4">
-                {presetAmounts.map((preset) => (
-                  <button
-                    key={preset}
-                    onClick={() => {
-                      setAmount(preset)
-                      setCustomAmount("")
-                    }}
-                    className={`py-4 px-6 rounded-2xl border-2 font-semibold transition-all ${
-                      amount === preset ? "bg-[#c8ff5c] border-black" : "bg-white border-gray-300 hover:border-black"
-                    }`}
+              <p className="text-gray-600 mb-6">
+                Your contribution today can create real change. Make a fast donation to support urgent global causes and
+                help communities in need.
+              </p>
+
+              {/* Donation Type Tabs */}
+              <Tabs value={donationType} onValueChange={setDonationType} className="mb-6">
+                <TabsList className="w-full bg-[#f5f5f0] border-2 border-black rounded-2xl p-1">
+                  <TabsTrigger
+                    value="general"
+                    className="flex-1 rounded-xl data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black font-semibold"
                   >
-                    LE {preset}
-                  </button>
-                ))}
-              </div>
-
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-semibold">LE</span>
-                <input
-                  type="number"
-                  placeholder="Custom amount"
-                  value={customAmount}
-                  onChange={(e) => {
-                    setCustomAmount(e.target.value)
-                    setAmount(null)
-                  }}
-                  className="w-full pl-12 pr-4 py-4 border-2 border-gray-300 rounded-2xl text-lg focus:border-black focus:outline-none"
-                />
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">Payment Method</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {paymentMethods.map((method) => (
-                  <button
-                    key={method.id}
-                    onClick={() => setPaymentMethod(method.id)}
-                    className={`p-6 rounded-2xl border-2 font-semibold transition-all flex items-center gap-4 ${
-                      paymentMethod === method.id
-                        ? "bg-[#c8ff5c] border-black"
-                        : "bg-white border-gray-300 hover:border-black"
-                    }`}
+                    General donation
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="specific"
+                    className="flex-1 rounded-xl data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black font-semibold"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <img
-                        src={method.logo || "/placeholder.svg"}
-                        alt={method.name}
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                    <span className="flex-1 text-left text-base">{method.name}</span>
-                    {paymentMethod === method.id && <Check className="h-6 w-6" />}
-                  </button>
-                ))}
-              </div>
-            </div>
+                    To a specific campaign/appeal
+                  </TabsTrigger>
+                </TabsList>
 
-            {/* Donor Information */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">Your Information</h2>
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full px-4 py-4 border-2 border-gray-300 rounded-2xl text-lg focus:border-black focus:outline-none"
-                />
+                <TabsContent value="general" className="mt-6">
+                  <p className="text-sm text-gray-600">
+                    Your donation will go to our general fund to support all causes.
+                  </p>
+                </TabsContent>
+
+                <TabsContent value="specific" className="mt-6">
+                  <Select value={selectedCampaign} onValueChange={setSelectedCampaign}>
+                    <SelectTrigger className="w-full border-2 border-black rounded-xl h-12">
+                      <SelectValue placeholder="Select a campaign" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {campaigns.map((campaign, index) => (
+                        <SelectItem key={index} value={campaign.title}>
+                          {campaign.title}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </TabsContent>
+              </Tabs>
+
+              {/* Email Input */}
+              <div className="mb-6">
                 <input
                   type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-4 border-2 border-gray-300 rounded-2xl text-lg focus:border-black focus:outline-none"
-                />
-                <textarea
-                  placeholder="Message (Optional)"
-                  rows={4}
-                  className="w-full px-4 py-4 border-2 border-gray-300 rounded-2xl text-lg focus:border-black focus:outline-none resize-none"
+                  placeholder="Enter your email..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base focus:border-black focus:outline-none"
                 />
               </div>
-            </div>
 
-            {/* Submit */}
-            <Button
-              className="w-full bg-black text-white hover:bg-gray-900 py-6 text-lg rounded-2xl"
-              disabled={(!amount && !customAmount) || !paymentMethod}
-            >
-              Complete Donation
-            </Button>
-          </Card>
+              {/* Frequency Selector */}
+              <div className="mb-6">
+                <Select value={frequency} onValueChange={setFrequency}>
+                  <SelectTrigger className="w-full border-2 border-black rounded-xl h-12">
+                    <SelectValue placeholder="Give once" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="once">Give once</SelectItem>
+                    <SelectItem value="monthly">Give monthly</SelectItem>
+                    <SelectItem value="yearly">Give yearly</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Amount Selection */}
+              <div className="mb-6">
+                <div className="grid grid-cols-4 gap-3 mb-4">
+                  {presetAmounts.map((preset) => (
+                    <button
+                      key={preset}
+                      onClick={() => {
+                        setAmount(preset)
+                        setCustomAmount("")
+                      }}
+                      className={`py-3 px-4 rounded-xl border-2 font-semibold transition-all ${
+                        amount === preset
+                          ? "bg-[#c8ff5c] border-black"
+                          : "bg-[#f5f5f0] border-gray-300 hover:border-black"
+                      }`}
+                    >
+                      {currency}
+                      {preset}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Custom Amount */}
+                <div className="flex gap-2">
+                  <Select value={currency} onValueChange={setCurrency}>
+                    <SelectTrigger className="w-24 border-2 border-black rounded-xl">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="LE">LE</SelectItem>
+                      <SelectItem value="$">$</SelectItem>
+                      <SelectItem value="€">€</SelectItem>
+                      <SelectItem value="£">£</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <input
+                    type="number"
+                    placeholder="Amount"
+                    value={customAmount}
+                    onChange={(e) => {
+                      setCustomAmount(e.target.value)
+                      setAmount(null)
+                    }}
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl text-base focus:border-black focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Payment Method Buttons */}
+              <div className="space-y-3">
+                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
+                  <span>Donate with</span>
+                  <Image
+                    src="/images/orange-money-logo.png"
+                    alt="Orange Money"
+                    width={80}
+                    height={24}
+                    className="h-6 w-auto"
+                  />
+                </Button>
+
+                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
+                  <span>Donate with</span>
+                  <Image
+                    src="/images/salon-payment-logo.png"
+                    alt="Salon Payment"
+                    width={80}
+                    height={24}
+                    className="h-6 w-auto"
+                  />
+                </Button>
+
+                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
+                  <span>Donate with</span>
+                  <Image
+                    src="/images/usdc-solana-logo.png"
+                    alt="USDC Solana"
+                    width={80}
+                    height={24}
+                    className="h-6 w-auto"
+                  />
+                </Button>
+
+                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
+                  <span>Donate with</span>
+                  <Image
+                    src="/images/mastercard-logo.png"
+                    alt="Mastercard"
+                    width={60}
+                    height={24}
+                    className="h-6 w-auto"
+                  />
+                </Button>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
 

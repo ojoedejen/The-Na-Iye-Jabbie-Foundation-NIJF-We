@@ -37,24 +37,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
-        {children}
+      <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              // Suppress v0 preview environment CORS errors
               (function() {
                 const originalError = console.error;
+                const originalWarn = console.warn;
+                
                 console.error = function(...args) {
-                  if (args[0] && typeof args[0] === 'string' && args[0].includes("origins don't match")) {
+                  const msg = args[0] && typeof args[0] === 'string' ? args[0] : '';
+                  if (msg.includes("origins don't match") || msg.includes('v0.app') || msg.includes('vusercontent.net')) {
                     return;
                   }
                   originalError.apply(console, args);
+                };
+                
+                console.warn = function(...args) {
+                  const msg = args[0] && typeof args[0] === 'string' ? args[0] : '';
+                  if (msg.includes("origins don't match") || msg.includes('v0.app') || msg.includes('vusercontent.net')) {
+                    return;
+                  }
+                  originalWarn.apply(console, args);
                 };
               })();
             `,
           }}
         />
-      </body>
+      </head>
+      <body className={`font-sans antialiased`}>{children}</body>
     </html>
   )
 }
