@@ -15,7 +15,7 @@ export function CTASection() {
           BECOME PART OF A<br />
           COMPASSIONATE COMMUNITY
         </h2>
-        <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-semibold">
           Together, we can close the gap between those who want to help and those who urgently need it.
         </p>
 

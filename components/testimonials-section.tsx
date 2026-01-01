@@ -14,7 +14,7 @@ export function TestimonialsSection() {
             <span className="text-white font-semibold">TESTIMONIAL</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">WHAT PEOPLE SAY ABOUT US</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg font-semibold">
             Hear real stories and experiences from donors and beneficiaries who trust Fundflow to make every
             contribution meaningful.
           </p>
@@ -41,7 +41,7 @@ export function TestimonialsSection() {
 
           {/* Card 2 - Lime Green (Featured) */}
           <div className="bg-[#c8ff5c] border-2 border-black rounded-3xl p-8 space-y-6">
-            <p className="text-black leading-relaxed">
+            <p className="text-black leading-relaxed font-semibold">
               "Working on the ground, I've seen firsthand how difficult it can be to ensure that aid truly reaches the
               people who need it most. With Fundflow, that challenge became significantly easier. The platform provides
               real-time transparency, clear communication, and reliable tracking that gives both donors and field

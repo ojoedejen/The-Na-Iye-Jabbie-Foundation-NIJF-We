@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Sitemap */}
           <div>
-            <h3 className="text-sm font-semibold mb-6 text-gray-400">SITEMAP</h3>
+            <h3 className="text-sm mb-6 text-gray-400 font-bold">SITEMAP</h3>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="hover:text-gray-400 transition-colors">
@@ -36,7 +36,7 @@ export function Footer() {
 
           {/* Headquarters */}
           <div className="text-center">
-            <h3 className="text-sm font-semibold mb-6 text-gray-400">HEAD QUARTER OFFICE</h3>
+            <h3 className="text-sm mb-6 text-gray-400 font-bold">HEAD QUARTER OFFICE</h3>
             <address className="not-italic space-y-2 text-gray-300">
               <p>34 Marina View,</p>
               <p>Downtown Core Planning Area,</p>
@@ -56,7 +56,7 @@ export function Footer() {
 
           {/* Achievement */}
           <div className="text-right">
-            <h3 className="text-sm font-semibold mb-6 text-gray-400">ACHIEVEMENT</h3>
+            <h3 className="text-sm mb-6 text-gray-400 font-bold">ACHIEVEMENT</h3>
             <div className="inline-flex items-center gap-3 border-2 border-white rounded-full px-6 py-3">
               <div className="flex gap-1">
                 <div className="w-1 h-6 bg-white rounded-full" />
@@ -99,7 +99,7 @@ export function Footer() {
               <div className="w-4 h-4 bg-black rounded-full"></div>
             </div>
           </div>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-wider">FUNDFLOW</h2>
+          <h2 className="text-6xl tracking-wider md:text-9xl font-black">FUNDFLOW</h2>
         </div>
       </div>
 

@@ -56,7 +56,7 @@ export function HowItWorks() {
           <div className="space-y-8">
             <h2 className="text-5xl md:text-6xl font-bold">HOW IT WORKS</h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed max-w-xl text-balance">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-xl text-balance font-semibold">
               Publish your campaign and spread the word. Share it across social media, email, communities, and anyone
               who believes in your vision. The more people you reach, the faster your momentum grows.
             </p>
@@ -82,7 +82,7 @@ export function HowItWorks() {
           <div className="space-y-6">
             {steps.map((step) => (
               <div key={step.number} className="relative">
-                <div className="absolute -left-12 top-8 text-9xl font-bold text-gray-200 hidden lg:block">
+                <div className="absolute -left-12 top-8 text-9xl font-bold text-gray-200 hidden lg:block my-[-40px] mx-[-40px] mb-[-90px] py-0">
                   {step.number}
                 </div>
                 <button
@@ -103,7 +103,7 @@ export function HowItWorks() {
                     )}
                   </div>
                   {expandedStep === step.number && (
-                    <p className="text-sm leading-relaxed pl-11 animate-in slide-in-from-top-2 duration-300">
+                    <p className="text-sm leading-relaxed pl-11 animate-in slide-in-from-top-2 duration-300 font-semibold">
                       {step.description}
                     </p>
                   )}
@@ -117,7 +117,7 @@ export function HowItWorks() {
         <div className="mt-16 relative">
           <div className="bg-[#c8ff5c] border-2 border-black rounded-3xl p-8 lg:p-12">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <h3 className="text-2xl md:text-3xl font-bold max-w-3xl text-balance">
+              <h3 className="text-2xl max-w-3xl text-balance font-extrabold md:text-3xl tracking-wider">
                 TRACING THE PATH OF EVERY DONATION AS IT TRANSFORMS INTO HELP, HEALING, AND HOPE FOR THOSE WHO NEED IT
                 MOST.
               </h3>

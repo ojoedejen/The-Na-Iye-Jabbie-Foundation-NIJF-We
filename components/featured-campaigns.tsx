@@ -7,7 +7,7 @@ export function FeaturedCampaigns() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
           <div className="flex-1">
-            <div className="bg-[#c8ff5c] text-black inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="bg-[#c8ff5c] text-black inline-block px-4 py-2 rounded-full text-sm mb-4 font-bold">
               FEATURED CAMPAIGNS MAKING A REAL IMPACT IN COMMUNITIES AFFECTED BY RECENT DISASTERS
             </div>
 
@@ -23,10 +23,10 @@ export function FeaturedCampaigns() {
           </div>
 
           <div className="lg:max-w-md">
-            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            <button className="bg-white text-black px-6 py-2 rounded-full text-sm mb-4 font-bold">
               YOUR DONATION MATTERS
             </button>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-400 leading-relaxed font-medium">
               Discover urgent causes that need support right now. These campaigns are verified, transparent, and driven
               by communities working together to rebuild after disaster.
             </p>
@@ -47,7 +47,7 @@ export function FeaturedCampaigns() {
               <h3 className="text-xl font-bold">EMERGENCY RELIEF FOR SUMATRA FLOOD VICTIMS</h3>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-blue-500" />
-                <span className="text-sm">CareRelief Indonesia</span>
+                <span className="text-sm font-semibold">CareRelief Indonesia</span>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
@@ -88,7 +88,7 @@ export function FeaturedCampaigns() {
               <h3 className="text-xl font-bold">SUPPORT EVACUATION AFTER MOUNT ERUPTION</h3>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-blue-500" />
-                <span className="text-sm">Humanity First Response Team</span>
+                <span className="text-sm font-semibold">Humanity First Response Team</span>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">

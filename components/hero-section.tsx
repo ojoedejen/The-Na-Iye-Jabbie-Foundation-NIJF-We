@@ -32,7 +32,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight text-balance">
+            <h1 className="text-6xl md:text-7xl leading-tight text-balance font-black">
               YOUR <span className="bg-[#c8ff5c] px-3 py-1 inline-block">KINDNESS</span>
               <br />
               CAN CHANGE
@@ -61,7 +61,7 @@ export function HeroSection() {
 
             {/* Partner Logos */}
             <div className="pt-12">
-              <p className="text-sm text-gray-500 mb-4">Partnering with</p>
+              <p className="text-sm text-gray-500 mb-4 font-semibold">Partnering with</p>
               <div className="flex flex-wrap items-center gap-8">
                 <img src="/unicef-logo.png" alt="UNICEF" className="h-10 opacity-60" />
                 <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-10 opacity-60" />
