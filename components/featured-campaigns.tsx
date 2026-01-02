@@ -84,7 +84,7 @@ export function FeaturedCampaigns() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
-                <h3 className="text-2xl font-serif font-bold mb-2">On the Ground</h3>
+                <h3 className="text-2xl font-bold mb-2 font-sans">On the Ground</h3>
                 <p className="text-sm opacity-90">See how your contributions are making a direct impact in the field today.</p>
               </div>
             </div>
