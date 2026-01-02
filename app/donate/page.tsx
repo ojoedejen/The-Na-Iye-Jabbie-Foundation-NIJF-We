@@ -9,11 +9,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ArrowLeft, ArrowRight, Heart } from "lucide-react"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 import Image from "next/image"
+import { createDonation } from "@/app/actions/donation-actions"
 
 export default function DonatePage() {
   const searchParams = useSearchParams()
+  const router = useRouter()
   const initialCampaign = searchParams.get("title") || "Water Scarcity In Maiduguri: Lifeline Ramadan Campaign 2021"
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -24,6 +26,9 @@ export default function DonatePage() {
   const [customAmount, setCustomAmount] = useState("")
   const [email, setEmail] = useState("")
   const [currency, setCurrency] = useState("LE")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState(false)
 
   const campaigns = [
     {
@@ -56,21 +61,84 @@ export default function DonatePage() {
     }
   }
 
+  async function handleDonation(paymentMethod: string) {
+    setIsSubmitting(true)
+    setError(null)
+    setSuccess(false)
+
+    const donationAmount = amount || Number.parseFloat(customAmount)
+
+    if (!donationAmount || donationAmount <= 0) {
+      setError("Please enter a valid donation amount")
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!email) {
+      setError("Please enter your email address")
+      setIsSubmitting(false)
+      return
+    }
+
+    console.log("[v0] Processing donation:", {
+      amount: donationAmount,
+      currency,
+      paymentMethod,
+      email,
+      frequency,
+      donationType,
+      campaign: donationType === "specific" ? selectedCampaign : null,
+    })
+
+    const formData = new FormData()
+    formData.append("amount", donationAmount.toString())
+    formData.append("currency", currency)
+    formData.append("paymentMethod", paymentMethod)
+    formData.append("donorEmail", email)
+    formData.append("frequency", frequency)
+    formData.append("donationType", donationType)
+    if (donationType === "specific") {
+      formData.append("campaignId", selectedCampaign)
+    }
+
+    try {
+      const result = await createDonation(formData)
+
+      if (result.success) {
+        console.log("[v0] Donation successful:", result.data)
+        setSuccess(true)
+
+        setAmount(null)
+        setCustomAmount("")
+        setEmail("")
+
+        setTimeout(() => {
+          router.push("/?donation=success")
+        }, 3000)
+      } else {
+        console.error("[v0] Donation failed:", result.error)
+        setError(result.error || "Failed to process donation")
+      }
+    } catch (err) {
+      console.error("[v0] Unexpected error:", err)
+      setError("An unexpected error occurred")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#f5f5f0]">
       <Navigation />
 
       <div className="container mx-auto px-4 pt-32 pb-20">
-        {/* Back Button - Arrow Only */}
         <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8">
           <ArrowLeft className="h-6 w-6" />
         </Link>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-          {/* Left Side - Campaign Carousel */}
           <div className="space-y-8">
             <div className="relative">
-              {/* Campaign Carousel */}
               <div className="relative bg-white border-2 border-black rounded-3xl overflow-hidden">
                 <div className="relative h-[500px]">
                   <Image
@@ -80,7 +148,6 @@ export default function DonatePage() {
                     className="object-cover"
                   />
 
-                  {/* Carousel Controls */}
                   <button
                     onClick={() => handleSlideChange("prev")}
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black shadow-lg hover:bg-gray-100 transition-colors"
@@ -94,7 +161,6 @@ export default function DonatePage() {
                     <ArrowRight className="h-5 w-5" />
                   </button>
 
-                  {/* Campaign Info Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-[#c8ff5c] p-6 border-t-2 border-black">
                     <h3 className="text-2xl font-bold mb-2">{campaigns[currentSlide].title}</h3>
                     <div className="flex items-center gap-4 text-sm text-gray-700">
@@ -111,7 +177,6 @@ export default function DonatePage() {
                 </div>
               </div>
 
-              {/* Slide Indicators */}
               <div className="flex justify-center gap-2 mt-4">
                 {campaigns.map((_, index) => (
                   <button
@@ -126,7 +191,6 @@ export default function DonatePage() {
             </div>
           </div>
 
-          {/* Right Side - Donation Form */}
           <div className="lg:sticky lg:top-24 h-fit">
             <Card className="p-8 border-2 border-black rounded-3xl bg-white">
               <div className="flex items-center gap-3 mb-6">
@@ -141,7 +205,16 @@ export default function DonatePage() {
                 help communities in need.
               </p>
 
-              {/* Donation Type Tabs */}
+              {success && (
+                <div className="mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-2xl text-green-700">
+                  Thank you for your donation! Redirecting...
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border-2 border-red-500 rounded-2xl text-red-700">{error}</div>
+              )}
+
               <Tabs value={donationType} onValueChange={setDonationType} className="mb-6">
                 <TabsList className="w-full bg-[#f5f5f0] border-2 border-black rounded-2xl p-1">
                   <TabsTrigger
@@ -180,18 +253,17 @@ export default function DonatePage() {
                 </TabsContent>
               </Tabs>
 
-              {/* Email Input */}
               <div className="mb-6">
                 <input
                   type="email"
                   placeholder="Enter your email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base focus:border-black focus:outline-none"
                 />
               </div>
 
-              {/* Frequency Selector */}
               <div className="mb-6">
                 <Select value={frequency} onValueChange={setFrequency}>
                   <SelectTrigger className="w-full border-2 border-black rounded-xl h-12">
@@ -205,12 +277,12 @@ export default function DonatePage() {
                 </Select>
               </div>
 
-              {/* Amount Selection */}
               <div className="mb-6">
                 <div className="grid grid-cols-4 gap-3 mb-4">
                   {presetAmounts.map((preset) => (
                     <button
                       key={preset}
+                      type="button"
                       onClick={() => {
                         setAmount(preset)
                         setCustomAmount("")
@@ -227,7 +299,6 @@ export default function DonatePage() {
                   ))}
                 </div>
 
-                {/* Custom Amount */}
                 <div className="flex gap-2">
                   <Select value={currency} onValueChange={setCurrency}>
                     <SelectTrigger className="w-24 border-2 border-black rounded-xl">
@@ -248,15 +319,20 @@ export default function DonatePage() {
                       setCustomAmount(e.target.value)
                       setAmount(null)
                     }}
+                    min="1"
+                    step="0.01"
                     className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl text-base focus:border-black focus:outline-none"
                   />
                 </div>
               </div>
 
-              {/* Payment Method Buttons */}
               <div className="space-y-3">
-                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
-                  <span>Donate with</span>
+                <Button
+                  onClick={() => handleDonation("orange_money")}
+                  disabled={isSubmitting || (!amount && !customAmount) || !email}
+                  className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <span>{isSubmitting ? "Processing..." : "Donate with"}</span>
                   <Image
                     src="/images/orange-money-logo.png"
                     alt="Orange Money"
@@ -266,8 +342,12 @@ export default function DonatePage() {
                   />
                 </Button>
 
-                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
-                  <span>Donate with</span>
+                <Button
+                  onClick={() => handleDonation("salon_payment")}
+                  disabled={isSubmitting || (!amount && !customAmount) || !email}
+                  className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <span>{isSubmitting ? "Processing..." : "Donate with"}</span>
                   <Image
                     src="/images/salon-payment-logo.png"
                     alt="Salon Payment"
@@ -277,8 +357,12 @@ export default function DonatePage() {
                   />
                 </Button>
 
-                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
-                  <span>Donate with</span>
+                <Button
+                  onClick={() => handleDonation("usdc_solana")}
+                  disabled={isSubmitting || (!amount && !customAmount) || !email}
+                  className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <span>{isSubmitting ? "Processing..." : "Donate with"}</span>
                   <Image
                     src="/images/usdc-solana-logo.png"
                     alt="USDC Solana"
@@ -288,8 +372,12 @@ export default function DonatePage() {
                   />
                 </Button>
 
-                <Button className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3">
-                  <span>Donate with</span>
+                <Button
+                  onClick={() => handleDonation("mastercard")}
+                  disabled={isSubmitting || (!amount && !customAmount) || !email}
+                  className="w-full h-14 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <span>{isSubmitting ? "Processing..." : "Donate with"}</span>
                   <Image
                     src="/images/mastercard-logo.png"
                     alt="Mastercard"
