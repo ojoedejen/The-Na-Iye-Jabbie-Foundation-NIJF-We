@@ -38,9 +38,9 @@ export function Footer() {
           <div className="text-center">
             <h3 className="text-sm mb-6 text-gray-400 font-bold">HEAD QUARTER OFFICE</h3>
             <address className="not-italic space-y-2 text-gray-300">
-              <p>34 Marina View,</p>
-              <p>Downtown Core Planning Area,</p>
-              <p>Singapore 018963</p>
+              <p>Kroo Bay Community,</p>
+              <p>Freetown,</p>
+              <p>Sierra Leone</p>
             </address>
             <div className="flex justify-center gap-4 mt-6">
               <a href="#" className="hover:text-gray-400 transition-colors">
@@ -76,7 +76,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-800">
-          <p className="text-sm text-gray-400">Copyright FUNDFLOW Inc.</p>
+          <p className="text-sm text-gray-400">Copyright The Na-Iye Jabbie Foundation Inc.</p>
           <div className="flex gap-8 text-sm text-gray-400">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Services
@@ -99,7 +99,9 @@ export function Footer() {
               <div className="w-4 h-4 bg-black rounded-full"></div>
             </div>
           </div>
-          <h2 className="text-6xl tracking-wider md:text-9xl font-black">FUNDFLOW</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl tracking-wide font-black text-center">
+            THE NA-IYE JABBIE FOUNDATION
+          </h2>
         </div>
       </div>
 

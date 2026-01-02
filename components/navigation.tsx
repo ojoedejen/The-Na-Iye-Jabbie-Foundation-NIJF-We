@@ -29,9 +29,6 @@ export function Navigation() {
               <Link href="/" className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
                 Home
               </Link>
-              <Link href="/donate" className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                Donation
-              </Link>
               <Link href="/campaigns" className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
                 Rescue missions
               </Link>
@@ -47,8 +44,8 @@ export function Navigation() {
             </div>
 
             <div className="hidden md:block">
-              <Button asChild className="bg-green-700 text-white hover:bg-green-800 px-6 rounded-lg">
-                <Link href="/contact">Contact us</Link>
+              <Button asChild className="bg-gray-900 text-white hover:bg-black px-6 rounded-lg">
+                <Link href="/donate">Donate Now</Link>
               </Button>
             </div>
 
@@ -63,9 +60,6 @@ export function Navigation() {
               <Link href="/" className="block text-gray-900 hover:text-gray-600 py-2 font-medium">
                 Home
               </Link>
-              <Link href="/donate" className="block text-gray-900 hover:text-gray-600 py-2 font-medium">
-                Donation
-              </Link>
               <Link href="/campaigns" className="block text-gray-900 hover:text-gray-600 py-2 font-medium">
                 Rescue missions
               </Link>
@@ -78,8 +72,8 @@ export function Navigation() {
               <Link href="/contact" className="block text-gray-900 hover:text-gray-600 py-2 font-medium">
                 Contacts
               </Link>
-              <Button asChild className="bg-green-700 text-white hover:bg-green-800 w-full rounded-lg">
-                <Link href="/contact">Contact us</Link>
+              <Button asChild className="bg-gray-900 text-white hover:bg-black w-full rounded-lg">
+                <Link href="/donate">Donate Now</Link>
               </Button>
             </div>
           )}

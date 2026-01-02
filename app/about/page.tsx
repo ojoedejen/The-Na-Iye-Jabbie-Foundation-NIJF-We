@@ -3,17 +3,76 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { Heart, Users, Sprout, Baby } from "lucide-react"
 
 export default function AboutPage() {
-  const teamMembers = [
-    { name: "Jett Russo", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Evan Bell", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Kenig Fischer", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Miguel", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Scott", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Sierra Joseph", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Evelyn Hunter", image: "/placeholder.svg?height=60&width=60" },
-    { name: "Enao Di", image: "/placeholder.svg?height=60&width=60" },
+  const programs = [
+    {
+      icon: Heart,
+      title: "Health Awareness & Mental Wellness",
+      description:
+        "NIJF conducts community health workshops addressing critical public health issues including drug abuse prevention and mental health awareness. Our kush sensitization and mental health awareness initiative targets vulnerable communities like Kroo Bay, combining education with practical support to combat substance abuse and promote psychological well-being.",
+      color: "bg-rose-100",
+    },
+    {
+      icon: Baby,
+      title: "Children's Assurance Program",
+      description:
+        "Through our Children's Assurance Program, NIJF focuses on child protection, welfare, and development. We prioritize vulnerable children in Sierra Leone, ensuring access to support, education, and a safe environment to thrive and reach their potential.",
+      color: "bg-blue-100",
+    },
+    {
+      icon: Sprout,
+      title: "NIJF Goes Green – Agriculture for Empowerment",
+      description:
+        "Our flagship 'NIJF Goes Green' agricultural initiative empowers communities through sustainable farming practices. We support women in agriculture, promote food security for underprivileged families, and create economic opportunities through agricultural training and resources. This program directly addresses hunger while building women's independence and community resilience.",
+      color: "bg-green-100",
+    },
+    {
+      icon: Users,
+      title: "Women's Empowerment Initiative",
+      description:
+        "NIJF champions gender equality through targeted programs that empower women economically, socially, and personally. From agricultural training to financial literacy and leadership development, we create pathways for women to lead, earn, and thrive in their communities.",
+      color: "bg-purple-100",
+    },
+  ]
+
+  const faqs = [
+    {
+      question: "What is The Na-Iye Jabbie Foundation?",
+      answer:
+        "The Na-Iye Jabbie Foundation (NIJF) is a nonprofit humanitarian organization operating as a flagship program under TechHealth Africa. Based in Freetown, Sierra Leone, we address critical social challenges through community-focused initiatives in public health, youth development, and social protection.",
+    },
+    {
+      question: "How does NIJF support communities?",
+      answer:
+        "We work through four key program areas: Health Awareness & Mental Wellness, Children's Assurance Program, NIJF Goes Green Agriculture Initiative, and Women's Empowerment. Each program is designed to create lasting, sustainable change in vulnerable communities.",
+    },
+    {
+      question: "Who founded The Na-Iye Jabbie Foundation?",
+      answer:
+        "The Na-Iye Jabbie Foundation was established by Amb. Billoh Gassama and operates under the broader TechHealth Africa initiative, bringing together expertise in technology, health, and community development.",
+    },
+    {
+      question: "Where does NIJF operate?",
+      answer:
+        "NIJF is based in Freetown, Sierra Leone, and serves vulnerable communities throughout the country, with targeted programs in areas like Kroo Bay and rural agricultural communities.",
+    },
+    {
+      question: "How can I support NIJF programs?",
+      answer:
+        "You can support our work through donations, volunteering, or starting a campaign for a specific program. Every contribution helps us build stronger, more resilient communities across Sierra Leone.",
+    },
+    {
+      question: "What is the kush sensitization program?",
+      answer:
+        "Our kush sensitization initiative is a critical health awareness program targeting drug abuse prevention in vulnerable communities. We combine education, practical support, and mental health services to combat substance abuse and promote well-being.",
+    },
+    {
+      question: "How does NIJF empower women?",
+      answer:
+        "Through our Women's Empowerment Initiative and NIJF Goes Green program, we provide agricultural training, financial literacy education, leadership development, and economic opportunities that enable women to achieve independence and thrive.",
+    },
   ]
 
   return (
@@ -23,11 +82,9 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-32 pb-12">
         <div className="text-center mb-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">
-            We're making a difference to people's lives
-          </h1>
-          <p className="text-lg text-gray-600">Creating a way to impact people in work, with people.</p>
-          <p className="text-lg text-gray-600">We need extra data.</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">About The Na-Iye Jabbie Foundation</h1>
+          <p className="text-lg text-gray-600">Serving humanity through community-focused initiatives</p>
+          <p className="text-lg text-gray-600">Building stronger, more resilient communities in Sierra Leone</p>
         </div>
 
         <div className="text-center mb-8">
@@ -36,8 +93,8 @@ export default function AboutPage() {
 
         <div className="bg-white border-2 border-black rounded-3xl overflow-hidden">
           <Image
-            src="/diverse-workers-volunteers-in-colorful-uniforms.jpg"
-            alt="Diverse team of workers"
+            src="/nijf-community-gathering.jpg"
+            alt="NIJF community gathering"
             width={1200}
             height={500}
             className="w-full object-cover"
@@ -53,13 +110,17 @@ export default function AboutPage() {
           </div>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              At Wokka, we're tackling the future of work head through dynamic mechanisms and use the work for better or
-              worse, from mundane task to ground breaking projects. We are committed to up of relieved can be has faced,
-              building are easier with partners and one workforce labour solution for all.
+              The Na-Iye Jabbie Foundation (NIJF), operating as a flagship program under TechHealth Africa, is a
+              nonprofit humanitarian organization committed to serving humanity through diverse, community-focused
+              initiatives. Based in Freetown, Sierra Leone, NIJF works to address critical social challenges through
+              targeted programs that prioritize public health, youth development, and social protection in vulnerable
+              communities.
             </p>
             <p>
-              We see a team of Spent first, hard-working individuals. First of anything normally should create solid
-              jobs and, income source. Economic growth, families can be create opportunities world
+              Our mission is rooted in the principle of giving back to society. We believe that sustainable change comes
+              from understanding community needs and working alongside local people to create lasting solutions. Whether
+              through health awareness campaigns, agricultural empowerment, women's development, or children's welfare
+              programs, NIJF is committed to building stronger, more resilient communities.
             </p>
           </div>
         </div>
@@ -68,74 +129,70 @@ export default function AboutPage() {
       {/* Who We Are Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-[#c8ff5c] border-2 border-black rounded-3xl p-12">
-          <h2 className="text-4xl font-bold mb-8">Who we are & how we arrived here?</h2>
+          <h2 className="text-4xl font-bold mb-8">Leadership & Vision</h2>
           <div className="space-y-6 text-gray-800 leading-relaxed">
             <p>
               <span className="font-semibold">
-                Started in 2015 by Shawn Lemon, The Digital Organiser partners with forward-thinking businesses to
-                create streamlined, effective, and easy-to-use digital organisation systems.
+                The Na-Iye Jabbie Foundation was established by Amb. Billoh Gassama and operates under the broader
+                TechHealth Africa initiative.
               </span>{" "}
-              It is our belief that everyone should have access to the help they need to supercharge their productivity
-              so that they can get more of the right things done.
+              Our organization brings together expertise in technology, health, and community development to create
+              innovative solutions for Sierra Leone's most pressing challenges.
             </p>
             <p>
-              Shawn spent the early part of his career working as a Creative at Apple where he focused on training
-              people how to use their products—whether it was a new iPhone, a Mac, or anything else in between.
-              Throughout his nearly 7 years there, he began to see a pattern with his customers: day after day, in
-              thousands of training sessions, people came with the same goals—to start fresh with a clean inbox to
-              better manage their information and start creative projects. However, once people transferred their
-              information onto their new Macs, their digital workspaces were a giant mess.
+              We believe that sustainable development requires a holistic approach. By combining health interventions
+              with economic empowerment, education, and social support, we create comprehensive programs that address
+              root causes rather than just symptoms. Our work is guided by the communities we serve, ensuring that every
+              initiative is culturally relevant and truly meets local needs.
             </p>
             <p>
-              Seeing a need in the market motivated Shawn to begin moonlighting to help people get their Macs organized.
-              In sync, word spread quickly and Shawn needed to quit his job with Apple in order to keep up with the
-              demand. And The Digital Organiser was born.
+              From addressing the kush epidemic in Kroo Bay to empowering women through agricultural training, NIJF is
+              at the forefront of community-driven change in Sierra Leone. We don't just provide services – we build
+              capacity, create opportunities, and foster the resilience that communities need to thrive independently.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Programs Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-[#ff5722] border-2 border-black rounded-3xl p-12 text-white">
-          <h2 className="text-4xl font-bold mb-6">We're here, there, everywhere</h2>
-          <p className="mb-8">We're a team who passionate about making work better for everyone.</p>
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold mb-4">What We Do</h2>
+          <p className="text-gray-600">
+            Our programs address critical needs across health, child welfare, agriculture, and women's empowerment
+          </p>
+        </div>
 
-          <div className="flex flex-wrap gap-4">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
-                <div className="w-10 h-10 rounded-full bg-white/40 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
+        <div className="grid md:grid-cols-2 gap-8">
+          {programs.map((program, index) => {
+            const Icon = program.icon
+            return (
+              <div key={index} className="bg-white border-2 border-black rounded-3xl p-8">
+                <div className={`${program.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6`}>
+                  <Icon className="w-8 h-8" />
                 </div>
-                <span className="font-medium">{member.name}</span>
+                <h3 className="text-2xl font-bold mb-4">{program.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{program.description}</p>
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4">Got any questions? We have answers.</h2>
-          <p className="text-gray-600">Play workers seconds, with conference links worked, organization.</p>
+          <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-gray-600">Learn more about The Na-Iye Jabbie Foundation and our work</p>
         </div>
 
         <Accordion type="single" collapsible className="space-y-4">
-          {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+          {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="bg-white border-2 border-black rounded-2xl px-6">
               <AccordionTrigger className="text-left font-medium hover:no-underline py-6">
-                Eligibility Criteria for Organizations
+                {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 pb-6">
-                All registered organizations, institutions to Legal both shared organization post and education
-              </AccordionContent>
+              <AccordionContent className="text-gray-600 pb-6">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
@@ -144,7 +201,7 @@ export default function AboutPage() {
       {/* Become a Member Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-2">Become wokka member like you want</h2>
+          <h2 className="text-4xl font-bold mb-2">Join The Movement</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -153,27 +210,26 @@ export default function AboutPage() {
             <div className="inline-block bg-[#ffe5d9] text-[#ff5722] px-4 py-1 rounded-full text-sm font-medium mb-4">
               Donor
             </div>
-            <h3 className="text-2xl font-bold mb-4">People wanting work to be helpful during your busy week</h3>
+            <h3 className="text-2xl font-bold mb-4">Support Our Mission to Transform Communities</h3>
             <p className="text-gray-600 mb-6">
-              Are you looking for someone to assist with household maintenance, errands...
+              Your contributions help us provide health services, support children, empower women, and create
+              sustainable agricultural opportunities across Sierra Leone.
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-start gap-2">
                 <span className="text-[#c8ff5c] text-xl">✓</span>
-                <span className="text-sm">Access expert certified drivers, grooms, and producers.</span>
+                <span className="text-sm">Direct impact on vulnerable communities</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#c8ff5c] text-xl">✓</span>
-                <span className="text-sm">Access expert certified drivers, grooms, and producers.</span>
+                <span className="text-sm">Transparent reporting on fund usage</span>
               </li>
             </ul>
-            <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">
-              Join as Donor
-            </Button>
+            <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">Donate Now</Button>
             <div className="mt-6">
               <Image
-                src="/worker-with-safety-equipment.jpg"
-                alt="Worker"
+                src="/nijf-donor-impact.jpg"
+                alt="NIJF Impact"
                 width={400}
                 height={200}
                 className="w-full rounded-2xl object-cover"
@@ -181,30 +237,33 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Service Provider Card */}
+          {/* Volunteer Card */}
           <div className="bg-white border-2 border-black rounded-3xl p-8">
-            <div className="inline-block bg-[#ffe5d9] text-[#ff5722] px-4 py-1 rounded-full text-sm font-medium mb-4">
-              Service Provider
+            <div className="inline-block bg-[#d9f7e5] text-[#22c55e] px-4 py-1 rounded-full text-sm font-medium mb-4">
+              Volunteer
             </div>
-            <h3 className="text-2xl font-bold mb-4">Aspiring offering courses to become part of your pace</h3>
-            <p className="text-gray-600 mb-6">Becoming part of our Wokka Serve means you will have opportunities...</p>
+            <h3 className="text-2xl font-bold mb-4">Become Part of Our Team</h3>
+            <p className="text-gray-600 mb-6">
+              Join our dedicated volunteers working on health awareness, agricultural training, child welfare, and
+              community development programs across Sierra Leone.
+            </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-start gap-2">
                 <span className="text-[#c8ff5c] text-xl">✓</span>
-                <span className="text-sm">Access expert certified drivers, grooms, and producers.</span>
+                <span className="text-sm">Make a direct difference in people's lives</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#c8ff5c] text-xl">✓</span>
-                <span className="text-sm">Access expert certified drivers, grooms, and producers.</span>
+                <span className="text-sm">Gain experience in community development</span>
               </li>
             </ul>
-            <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">
-              Join as Service Provider
+            <Button className="w-full bg-[#22c55e] hover:bg-[#16a34a] text-white rounded-full h-12">
+              Join as Volunteer
             </Button>
             <div className="mt-6">
               <Image
-                src="/service-worker-helping-customer.jpg"
-                alt="Service Provider"
+                src="/nijf-volunteer-work.jpg"
+                alt="NIJF Volunteers"
                 width={400}
                 height={200}
                 className="w-full rounded-2xl object-cover"

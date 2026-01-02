@@ -16,28 +16,15 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Profile Avatars */}
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white overflow-hidden">
-                  <img src="/abstract-profile.png" alt="Donor" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white overflow-hidden">
-                  <img src="/abstract-profile.png" alt="Donor" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white overflow-hidden">
-                  <img src="/abstract-profile.png" alt="Donor" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <span className="text-sm text-gray-600">17M+ people helping others</span>
-            </div>
+            
 
             {/* Main Headline */}
             <h1 className="text-6xl md:text-7xl leading-tight text-balance font-black">
-              YOUR <span className="bg-[#c8ff5c] px-3 py-1 inline-block">KINDNESS</span>
+              BUILDING <span className="bg-[#c8ff5c] px-3 py-1 inline-block">STRONGER</span>
               <br />
-              CAN CHANGE
+              COMMUNITIES
               <br />
-              SOMEONE'S LIFE
+              TOGETHER
             </h1>
 
             {/* CTA Buttons */}
@@ -61,7 +48,7 @@ export function HeroSection() {
 
             {/* Partner Logos */}
             <div className="pt-12">
-              <p className="text-sm text-gray-500 mb-4 font-semibold">Partnering with</p>
+              <p className="text-sm text-gray-500 mb-4 font-semibold">Part of TechHealth Africa Initiative</p>
               <div className="flex flex-wrap items-center gap-8">
                 <img src="/unicef-logo.png" alt="UNICEF" className="h-10 opacity-60" />
                 <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-10 opacity-60" />
@@ -73,12 +60,12 @@ export function HeroSection() {
           {/* Right Content - Featured Campaign Card */}
           <div className="lg:pt-12">
             <CampaignCard
-              image="/images/image.png"
-              title="SUPPORT VICTIMS OF THE FLOOD IN ACEH"
-              organization="World Disaster Response Foundation"
-              raised={21800}
-              goal={60000}
-              category="FLOOD"
+              image="/images/nijf-health-awareness.jpg"
+              title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
+              organization="The Na-Iye Jabbie Foundation"
+              raised={15400}
+              goal={40000}
+              category="HEALTH"
               featured
             />
           </div>

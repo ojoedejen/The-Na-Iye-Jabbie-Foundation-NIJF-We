@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FUNDFLOW - Your Kindness Can Change Someone's Life",
+  title: "The Na-Iye Jabbie Foundation - Building Stronger Communities Together",
   description:
-    "A transparent donation platform connecting donors with verified disaster relief campaigns. Make every contribution meaningful.",
+    "The Na-Iye Jabbie Foundation empowers communities in Sierra Leone through health awareness, children's programs, agriculture, and women's empowerment initiatives.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -41,26 +41,52 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Suppress v0 preview environment CORS errors
+              // Comprehensive error suppression for v0 preview environment
               (function() {
+                const shouldSuppress = (msg) => {
+                  if (!msg) return false;
+                  const str = typeof msg === 'string' ? msg : String(msg);
+                  return str.includes("origins don't match") || 
+                         str.includes('v0.app') && str.includes('vusercontent.net') ||
+                         str.includes('SecurityError');
+                };
+
+                // Intercept console methods
                 const originalError = console.error;
                 const originalWarn = console.warn;
+                const originalLog = console.log;
                 
                 console.error = function(...args) {
-                  const msg = args[0] && typeof args[0] === 'string' ? args[0] : '';
-                  if (msg.includes("origins don't match") || msg.includes('v0.app') || msg.includes('vusercontent.net')) {
-                    return;
-                  }
+                  if (shouldSuppress(args[0])) return;
                   originalError.apply(console, args);
                 };
                 
                 console.warn = function(...args) {
-                  const msg = args[0] && typeof args[0] === 'string' ? args[0] : '';
-                  if (msg.includes("origins don't match") || msg.includes('v0.app') || msg.includes('vusercontent.net')) {
-                    return;
-                  }
+                  if (shouldSuppress(args[0])) return;
                   originalWarn.apply(console, args);
                 };
+                
+                console.log = function(...args) {
+                  if (shouldSuppress(args[0])) return;
+                  originalLog.apply(console, args);
+                };
+
+                // Intercept window error events
+                window.addEventListener('error', function(e) {
+                  if (shouldSuppress(e.message)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return true;
+                  }
+                }, true);
+
+                // Intercept unhandled promise rejections
+                window.addEventListener('unhandledrejection', function(e) {
+                  if (shouldSuppress(e.reason)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                }, true);
               })();
             `,
           }}

@@ -15,8 +15,8 @@ export function TestimonialsSection() {
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">WHAT PEOPLE SAY ABOUT US</h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg font-semibold">
-            Hear real stories and experiences from donors and beneficiaries who trust Fundflow to make every
-            contribution meaningful.
+            Hear real stories and experiences from donors and beneficiaries who trust The Na-Iye Jabbie Foundation to
+            make every contribution meaningful.
           </p>
         </div>
 
@@ -25,8 +25,8 @@ export function TestimonialsSection() {
           {/* Card 1 - Dark */}
           <div className="bg-gray-900/90 backdrop-blur border-2 border-gray-700 rounded-3xl p-8 space-y-6">
             <p className="text-white leading-relaxed">
-              "Fundflow made the entire distribution process seamless and transparent. Every donation reached the people
-              who truly needed it, and I felt fully supported throughout the mission."
+              "The Na-Iye Jabbie Foundation made the entire distribution process seamless and transparent. Every
+              donation reached the people who truly needed it, and I felt fully supported throughout the mission."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gray-600 overflow-hidden">
@@ -43,9 +43,9 @@ export function TestimonialsSection() {
           <div className="bg-[#c8ff5c] border-2 border-black rounded-3xl p-8 space-y-6">
             <p className="text-black leading-relaxed font-semibold">
               "Working on the ground, I've seen firsthand how difficult it can be to ensure that aid truly reaches the
-              people who need it most. With Fundflow, that challenge became significantly easier. The platform provides
-              real-time transparency, clear communication, and reliable tracking that gives both donors and field
-              workers complete confidence."
+              people who need it most. With The Na-Iye Jabbie Foundation, that challenge became significantly easier.
+              The platform provides real-time transparency, clear communication, and reliable tracking that gives both
+              donors and field workers complete confidence."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-green-700 overflow-hidden">
@@ -61,8 +61,8 @@ export function TestimonialsSection() {
           {/* Card 3 - Dark */}
           <div className="bg-gray-900/90 backdrop-blur border-2 border-gray-700 rounded-3xl p-8 space-y-6">
             <p className="text-white leading-relaxed">
-              "Thanks to Fundflow, we were able to coordinate aid faster and more efficiently. The platform ensures
-              accountability while empowering communities on the ground."
+              "Thanks to The Na-Iye Jabbie Foundation, we were able to coordinate aid faster and more efficiently. The
+              platform ensures accountability while empowering communities on the ground."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gray-600 overflow-hidden">
