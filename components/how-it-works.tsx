@@ -56,7 +56,7 @@ export function HowItWorks() {
           {/* Left Content */}
           <ScrollReveal>
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary">HOW IT WORKS</h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary font-sans font-black">HOW IT WORKS</h2>
 
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl text-balance font-medium">
                 Publish your campaign and spread the word. Share it across social media, email, communities, and anyone
@@ -71,11 +71,11 @@ export function HowItWorks() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-8 pt-8 border-t border-primary/10 mt-8">
                 <div>
-                  <div className="text-5xl md:text-6xl font-bold mb-2 text-primary">98%</div>
+                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black">98%</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Success rate</div>
                 </div>
                 <div>
-                  <div className="text-5xl md:text-6xl font-bold mb-2 text-primary">$125M+</div>
+                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-serif">$125M+</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Total Funded</div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export function HowItWorks() {
             <div className="bg-primary text-primary-foreground rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
-                <h3 className="text-2xl max-w-3xl text-balance font-serif font-bold md:text-3xl tracking-wide leading-tight">
+                <h3 className="text-2xl max-w-3xl text-balance font-bold md:text-3xl tracking-wide leading-tight font-sans">
                   TRACING THE PATH OF EVERY DONATION AS IT TRANSFORMS INTO HELP, HEALING, AND HOPE FOR THOSE WHO NEED IT
                   MOST.
                 </h3>

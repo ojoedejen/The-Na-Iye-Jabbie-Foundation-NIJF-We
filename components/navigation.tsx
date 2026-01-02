@@ -10,7 +10,7 @@ export function Navigation() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-top-4 duration-700 fade-in">
-      <div className="bg-white/80 backdrop-blur-md rounded-3xl border border-white/20 shadow-lg relative z-50">
+      <div className="bg-white/80 backdrop-blur-md rounded-3xl border border-white/20 relative z-50 shadow-xs font-sans">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             {/* Logo */}

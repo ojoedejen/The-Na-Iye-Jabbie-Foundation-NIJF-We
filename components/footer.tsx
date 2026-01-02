@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="text-primary-foreground bg-[rgba(0,32,0,1)]">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
@@ -99,7 +99,7 @@ export function Footer() {
       <div className="py-12 px-4 shadow-inner bg-black/20">
         <ScrollReveal>
           <div className="flex items-center justify-center gap-6 font-black">
-            <h2 className="text-2xl md:text-4xl tracking-wide text-center font-serif font-black lg:text-7xl text-primary-foreground/10">
+            <h2 className="text-2xl md:text-4xl tracking-wide text-center text-background font-sans lg:text-8xl font-black leading-[]">
               THE NA-IYE JABBIE FOUNDATION
             </h2>
           </div>

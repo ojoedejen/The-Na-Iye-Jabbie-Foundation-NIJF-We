@@ -16,7 +16,7 @@ export function TestimonialsSection() {
             <div className="inline-block border-2 border-primary/30 bg-primary/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
               <span className="text-primary-foreground font-semibold tracking-wide">TESTIMONIALS</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-serif text-white mb-6">WHAT PEOPLE SAY ABOUT US</h2>
+            <h2 className="text-5xl md:text-6xl text-white mb-6 font-sans font-black">WHAT PEOPLE SAY ABOUT US</h2>
             <p className="text-gray-200 max-w-2xl mx-auto text-lg font-medium">
               Hear real stories and experiences from donors and beneficiaries who trust The Na-Iye Jabbie Foundation to
               make every contribution meaningful.
