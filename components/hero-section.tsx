@@ -5,69 +5,96 @@ import { ArrowRight, Circle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { CampaignCard } from "@/components/campaign-card"
 import { Navigation } from "@/components/navigation"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#f5f5f0]">
+    <section className="relative min-h-screen bg-background overflow-hidden">
       <Navigation />
 
       <div className="container mx-auto px-4 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-start my-8">
           {/* Left Content */}
-          <div className="space-y-8">
-            {/* Profile Avatars */}
-            
+          <div className="space-y-8 relative z-10">
+            {/* Profile Avatars - Placeholder implementation */}
+            <ScrollReveal delay={0}>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-200" />
+                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-300" />
+                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-400" />
+                </div>
+                <span className="text-sm font-medium text-muted-foreground ml-2">Trusted by global partners</span>
+              </div>
+            </ScrollReveal>
 
             {/* Main Headline */}
-            <h1 className="text-6xl md:text-7xl leading-tight text-balance font-black">
-              BUILDING <span className="bg-[#c8ff5c] px-3 py-1 inline-block border-black border-solid border-4 rounded-xl">STRONGER</span>
-              <br />
-              COMMUNITIES
-              <br />
-              TOGETHER
-            </h1>
+            <ScrollReveal delay={200}>
+              <h1 className="text-6xl md:text-7xl leading-[1.1] font-serif tracking-tight text-foreground">
+                BUILDING <span className="bg-primary/20 text-primary px-4 py-1 inline-block border-primary border-2 rounded-full transform -rotate-1">STRONGER</span>
+                <br />
+                COMMUNITIES
+                <br />
+                TOGETHER
+              </h1>
+            </ScrollReveal>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-900 text-base px-8">
-                <Link href="/donate">
-                  DONATE NOW <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-2 border-black text-base px-8 bg-transparent"
-              >
-                <Link href="/create-campaign">
-                  <Circle className="mr-2 h-5 w-5" /> START A CAMPAIGN
-                </Link>
-              </Button>
-            </div>
+            <ScrollReveal delay={400}>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                >
+                  <Link href="/donate">
+                    DONATE NOW <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-primary text-primary text-base px-8 h-14 rounded-full bg-transparent hover:bg-primary/10 hover:scale-105 active:scale-95 transition-all duration-300"
+                >
+                  <Link href="/create-campaign">
+                    <Circle className="mr-2 h-5 w-5 fill-current" /> START A CAMPAIGN
+                  </Link>
+                </Button>
+              </div>
+            </ScrollReveal>
 
             {/* Partner Logos */}
-            <div className="pt-1">
-              <p className="text-sm text-gray-500 mb-4 font-semibold">Part of TechHealth Africa Initiative</p>
-              <div className="flex flex-wrap items-center gap-8">
-                <img src="/unicef-logo.png" alt="UNICEF" className="h-10 opacity-60" />
-                <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-10 opacity-60" />
-                <img src="/world-health-organization-logo.jpg" alt="WHO" className="h-10 opacity-60" />
+            <ScrollReveal delay={600}>
+              <div className="pt-4">
+                <p className="text-sm text-muted-foreground mb-4 font-semibold tracking-wider uppercase">Part of TechHealth Africa Initiative</p>
+                <div className="flex flex-wrap items-center gap-8 grayscale opacity-70 hover:opacity-100 transition-opacity duration-500">
+                  <img src="/unicef-logo.png" alt="UNICEF" className="h-8 md:h-10 w-auto object-contain" />
+                  <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-8 md:h-10 w-auto object-contain" />
+                  <img src="/world-health-organization-logo.jpg" alt="WHO" className="h-8 md:h-10 w-auto object-contain" />
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Content - Featured Campaign Card */}
-          <div className="lg:pt-0">
-            <CampaignCard
-              image="/images/nijf-health-awareness.jpg"
-              title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
-              organization="The Na-Iye Jabbie Foundation"
-              raised={15400}
-              goal={40000}
-              category="HEALTH"
-              featured
-            />
+          <div className="hidden lg:block lg:pt-0 relative">
+            {/* Decorative blob behind card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/20 blur-3xl rounded-full -z-10" />
+
+            <ScrollReveal delay={400} className="hover:-translate-y-2 transition-transform duration-500">
+              <div className="transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <CampaignCard
+                  image="/images/nijf-health-awareness.jpg"
+                  title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
+                  organization="The Na-Iye Jabbie Foundation"
+                  raised={15400}
+                  goal={40000}
+                  category="HEALTH"
+                  featured
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
