@@ -52,7 +52,7 @@ export function FeaturedCampaigns() {
                 <div className="flex items-center gap-2">
                   <span className="bg-gray-100 border border-gray-200 text-gray-800 rounded-full px-3 py-1 text-xs font-bold">#FLOOD</span>
                 </div>
-                <h3 className="text-xl font-serif font-bold h-14 line-clamp-2">EMERGENCY RELIEF FOR SUMATRA FLOOD VICTIMS</h3>
+                <h3 className="text-xl font-bold h-14 line-clamp-2 font-sans">EMERGENCY RELIEF FOR SUMATRA FLOOD VICTIMS</h3>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-blue-500" />
                   <span className="text-sm font-semibold text-gray-600">CareRelief Indonesia</span>
@@ -84,7 +84,7 @@ export function FeaturedCampaigns() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
-                <h3 className="text-2xl font-serif font-bold mb-2">On the Ground</h3>
+                <h3 className="text-2xl font-bold mb-2 font-sans">On the Ground</h3>
                 <p className="text-sm opacity-90">See how your contributions are making a direct impact in the field today.</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export function FeaturedCampaigns() {
                     #ERUPTION
                   </span>
                 </div>
-                <h3 className="text-xl font-serif font-bold h-14 line-clamp-2">SUPPORT EVACUATION AFTER MOUNT ERUPTION</h3>
+                <h3 className="text-xl font-bold h-14 line-clamp-2 font-sans">SUPPORT EVACUATION AFTER MOUNT ERUPTION</h3>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-blue-500" />
                   <span className="text-sm font-semibold text-gray-600">Humanity First Response Team</span>
