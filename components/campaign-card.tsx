@@ -30,7 +30,7 @@ export function CampaignCard({
     <Card className="overflow-hidden border-2 border-gray-900 bg-white rounded-3xl">
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
-        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
+        <img src={image || "/placeholder.svg"} alt={title} className="object-cover py-[-56px] py-[-] py-[-16px] h-auto w-full" />
         {/* Category Badge */}
         <div className="absolute top-4 right-4 bg-white rounded-full px-4 py-1.5 flex items-center gap-2">
           <Circle className="w-3 h-3 fill-red-500 text-red-500" />
@@ -76,9 +76,7 @@ export function CampaignCard({
         </Button>
 
         {/* Next Button */}
-        <button className="absolute bottom-6 right-6 w-12 h-12 bg-white border-2 border-gray-900 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-          <ArrowRight className="h-5 w-5" />
-        </button>
+        
       </div>
     </Card>
   )

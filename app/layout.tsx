@@ -41,52 +41,58 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Comprehensive error suppression for v0 preview environment
+              // Aggressive error suppression for v0 preview environment CORS errors
               (function() {
                 const shouldSuppress = (msg) => {
                   if (!msg) return false;
-                  const str = typeof msg === 'string' ? msg : String(msg);
+                  const str = typeof msg === 'string' ? msg : (msg.message || String(msg));
                   return str.includes("origins don't match") || 
-                         str.includes('v0.app') && str.includes('vusercontent.net') ||
-                         str.includes('SecurityError');
+                         str.includes('SecurityError') ||
+                         (str.includes('v0.app') && str.includes('vusercontent.net'));
                 };
 
-                // Intercept console methods
-                const originalError = console.error;
-                const originalWarn = console.warn;
-                const originalLog = console.log;
-                
-                console.error = function(...args) {
-                  if (shouldSuppress(args[0])) return;
-                  originalError.apply(console, args);
-                };
-                
-                console.warn = function(...args) {
-                  if (shouldSuppress(args[0])) return;
-                  originalWarn.apply(console, args);
-                };
-                
-                console.log = function(...args) {
-                  if (shouldSuppress(args[0])) return;
-                  originalLog.apply(console, args);
+                // Patch postMessage to suppress cross-origin errors
+                const originalPostMessage = window.postMessage;
+                window.postMessage = function(...args) {
+                  try {
+                    return originalPostMessage.apply(this, args);
+                  } catch (e) {
+                    if (!shouldSuppress(e)) throw e;
+                  }
                 };
 
-                // Intercept window error events
+                // Intercept all console methods
+                ['error', 'warn', 'log', 'info', 'debug'].forEach(method => {
+                  const original = console[method];
+                  console[method] = function(...args) {
+                    if (args.some(arg => shouldSuppress(arg))) return;
+                    original.apply(console, args);
+                  };
+                });
+
+                // Capture errors at the earliest phase
                 window.addEventListener('error', function(e) {
-                  if (shouldSuppress(e.message)) {
+                  if (shouldSuppress(e.message || e.error)) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    return true;
+                    e.stopImmediatePropagation();
+                    return false;
                   }
                 }, true);
 
-                // Intercept unhandled promise rejections
+                // Capture promise rejections
                 window.addEventListener('unhandledrejection', function(e) {
                   if (shouldSuppress(e.reason)) {
                     e.preventDefault();
-                    e.stopPropagation();
+                    e.stopImmediatePropagation();
                   }
                 }, true);
+
+                // Override onerror handler
+                const originalOnError = window.onerror;
+                window.onerror = function(message, source, lineno, colno, error) {
+                  if (shouldSuppress(message || error)) return true;
+                  return originalOnError ? originalOnError.apply(this, arguments) : false;
+                };
               })();
             `,
           }}

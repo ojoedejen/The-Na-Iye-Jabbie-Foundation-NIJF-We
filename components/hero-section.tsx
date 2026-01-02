@@ -58,7 +58,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Featured Campaign Card */}
-          <div className="lg:pt-12">
+          <div className="lg:pt-0">
             <CampaignCard
               image="/images/nijf-health-awareness.jpg"
               title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
