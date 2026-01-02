@@ -71,11 +71,11 @@ export function HowItWorks() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-8 pt-8 border-t border-primary/10 mt-8">
                 <div>
-                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black">98%</div>
+                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-sans">98%</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Success rate</div>
                 </div>
                 <div>
-                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-serif">$125M+</div>
+                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-sans">$12+</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Total Funded</div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function HowItWorks() {
                         <div className={`p-2 rounded-full ${expandedStep === step.number ? "bg-white/20" : "bg-primary/5"}`}>
                           {step.icon}
                         </div>
-                        <span className={`text-xl font-bold ${expandedStep === step.number ? "text-accent-foreground" : "text-primary"}`}>{step.title}</span>
+                        <span className={`text-xl font-sans font-black tracking-wider ${expandedStep === step.number ? "text-accent-foreground" : "text-primary"}`}>{step.title}</span>
                       </div>
                       {expandedStep === step.number ? (
                         <ChevronUp className="h-6 w-6 flex-shrink-0" />
