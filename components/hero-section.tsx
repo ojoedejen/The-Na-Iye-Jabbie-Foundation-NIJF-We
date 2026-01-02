@@ -18,19 +18,12 @@ export function HeroSection() {
           <div className="space-y-8 relative z-10">
             {/* Profile Avatars - Placeholder implementation */}
             <ScrollReveal delay={0}>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="flex -space-x-2">
-                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-200" />
-                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-300" />
-                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gray-400" />
-                </div>
-                <span className="text-sm font-medium text-muted-foreground ml-2">Trusted by global partners</span>
-              </div>
+              
             </ScrollReveal>
 
             {/* Main Headline */}
             <ScrollReveal delay={200}>
-              <h1 className="text-6xl leading-[1.1] tracking-tight text-foreground font-sans md:text-8xl font-black">
+              <h1 className="text-6xl leading-[1.1] tracking-tight text-foreground font-sans font-black md:text-7xl">
                 BUILDING <span className="bg-primary/20 text-primary px-4 py-1 inline-block border-primary border-2 rounded-full transform -rotate-1">STRONGER</span>
                 <br />
                 COMMUNITIES
