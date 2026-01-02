@@ -90,7 +90,7 @@ export function Footer() {
 
       {/* Large Logo */}
       <div className="py-12 px-4">
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center justify-center gap-6 font-black">
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center flex-shrink-0">
             <div className="grid grid-cols-2 gap-1 p-2">
               <div className="w-4 h-4 bg-black rounded-full"></div>
@@ -99,7 +99,7 @@ export function Footer() {
               <div className="w-4 h-4 bg-black rounded-full"></div>
             </div>
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl tracking-wide font-black text-center">
+          <h2 className="text-2xl md:text-4xl tracking-wide text-center font-black lg:text-7xl">
             THE NA-IYE JABBIE FOUNDATION
           </h2>
         </div>
