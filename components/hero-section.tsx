@@ -30,7 +30,7 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <ScrollReveal delay={200}>
-              <h1 className="text-6xl md:text-7xl leading-[1.1] font-serif tracking-tight text-foreground">
+              <h1 className="text-6xl leading-[1.1] tracking-tight text-foreground font-sans md:text-8xl font-black">
                 BUILDING <span className="bg-primary/20 text-primary px-4 py-1 inline-block border-primary border-2 rounded-full transform -rotate-1">STRONGER</span>
                 <br />
                 COMMUNITIES
