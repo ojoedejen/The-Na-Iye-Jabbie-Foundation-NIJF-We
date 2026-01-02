@@ -10,7 +10,7 @@ export function Navigation() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 p-4">
-      <div className="bg-gray-100 rounded-3xl border-4 border-black shadow-lg">
+      <div className="bg-gray-100 rounded-3xl border-4 border-black shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             {/* Logo */}

@@ -12,7 +12,7 @@ export function HeroSection() {
       <Navigation />
 
       <div className="container mx-auto px-4 pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start my-8">
           {/* Left Content */}
           <div className="space-y-8">
             {/* Profile Avatars */}
@@ -20,7 +20,7 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <h1 className="text-6xl md:text-7xl leading-tight text-balance font-black">
-              BUILDING <span className="bg-[#c8ff5c] px-3 py-1 inline-block">STRONGER</span>
+              BUILDING <span className="bg-[#c8ff5c] px-3 py-1 inline-block border-black border-solid border-4 rounded-xl">STRONGER</span>
               <br />
               COMMUNITIES
               <br />
@@ -47,7 +47,7 @@ export function HeroSection() {
             </div>
 
             {/* Partner Logos */}
-            <div className="pt-12">
+            <div className="pt-1">
               <p className="text-sm text-gray-500 mb-4 font-semibold">Part of TechHealth Africa Initiative</p>
               <div className="flex flex-wrap items-center gap-8">
                 <img src="/unicef-logo.png" alt="UNICEF" className="h-10 opacity-60" />
