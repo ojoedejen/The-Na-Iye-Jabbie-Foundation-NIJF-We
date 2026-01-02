@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 interface ScrollRevealProps {
     children: React.ReactNode
@@ -45,8 +45,8 @@ export function ScrollReveal({
         <div
             ref={ref}
             className={`${className} transition-all ease-out ${isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
                 }`}
             style={{
                 transitionDuration: `${duration}ms`,
