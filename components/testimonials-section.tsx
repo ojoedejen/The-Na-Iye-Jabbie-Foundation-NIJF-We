@@ -9,7 +9,7 @@ export function TestimonialsSection() {
           "linear-gradient(rgba(20, 30, 20, 0.8), rgba(20, 30, 20, 0.7)), url(/images/smiling-children.png)",
       }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">

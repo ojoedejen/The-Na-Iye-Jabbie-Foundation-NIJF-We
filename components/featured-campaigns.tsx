@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 export function FeaturedCampaigns() {
   return (
     <section className="bg-primary text-primary-foreground py-20 overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-5">
         {/* Header */}
         <ScrollReveal>
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">

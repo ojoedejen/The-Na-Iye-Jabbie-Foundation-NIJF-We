@@ -11,7 +11,7 @@ export function CTASection() {
         backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/images/smiling-children.png)",
       }}
     >
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto text-center px-6">
         <ScrollReveal>
           <h2 className="text-5xl md:text-6xl lg:text-7xl text-white mb-6 text-balance leading-tight font-sans font-black">
             BECOME PART OF A<br />
