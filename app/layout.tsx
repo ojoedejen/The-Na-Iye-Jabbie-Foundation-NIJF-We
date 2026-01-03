@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, DM_Serif_Display } from "next/font/google"
+import { Preloader } from "@/components/ui/preloader"
 import "./globals.css"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
@@ -43,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geist.variable} ${geistMono.variable} ${dmSerif.variable} font-sans antialiased`}>
+        <Preloader />
         {children}
       </body>
     </html>
