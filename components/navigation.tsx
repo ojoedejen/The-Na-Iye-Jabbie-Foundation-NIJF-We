@@ -26,19 +26,19 @@ export function Navigation() {
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-primary hover:text-primary/70 transition-colors font-black">
+              <Link href="/" className="text-primary hover:text-primary/70 transition-colors font-bold">
                 Home
               </Link>
-              <Link href="/campaigns" className="text-primary hover:text-primary/70 transition-colors font-black">
+              <Link href="/campaigns" className="text-primary hover:text-primary/70 transition-colors font-bold">
                 Rescue missions
               </Link>
-              <Link href="/about" className="text-primary hover:text-primary/70 transition-colors font-black">
+              <Link href="/about" className="text-primary hover:text-primary/70 transition-colors font-bold">
                 About us
               </Link>
-              <Link href="/events" className="text-primary hover:text-primary/70 transition-colors font-black">
+              <Link href="/events" className="text-primary hover:text-primary/70 transition-colors font-bold">
                 Events
               </Link>
-              <Link href="/contact" className="text-primary hover:text-primary/70 transition-colors font-black">
+              <Link href="/contact" className="text-primary hover:text-primary/70 transition-colors font-bold">
                 Contacts
               </Link>
             </div>

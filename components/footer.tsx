@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="text-primary-foreground bg-[rgba(0,32,0,1)]">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto py-16 px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Sitemap */}
           <ScrollReveal delay={0}>
