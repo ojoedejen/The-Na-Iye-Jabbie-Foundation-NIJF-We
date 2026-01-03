@@ -27,7 +27,7 @@ export default async function CampaignsPage() {
       <div className="container mx-auto px-4 pt-32 pb-20">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif text-primary">Rescue Missions</h1>
+            <h1 className="text-5xl md:text-6xl mb-6 font-serif text-primary font-black">All Campaigns</h1>
             <p className="text-xl text-gray-600 max-w-3xl">
               Discover urgent causes that need your support. Every campaign is verified, transparent, and driven by
               communities working together.
@@ -39,7 +39,6 @@ export default async function CampaignsPage() {
             {/* This would be wired up to a client component to trigger seeding if needed */}
           </div>
         </div>
-
 
         {campaigns && campaigns.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -64,8 +63,7 @@ export default async function CampaignsPage() {
             </Button>
             <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg max-w-md mx-auto">
               <p className="text-sm text-yellow-800">
-                <strong>Dev Note:</strong> If you see this, you may need to seed the database.
-                Run the seed action.
+                <strong>Dev Note:</strong> If you see this, you may need to seed the database. Run the seed action.
               </p>
             </div>
           </div>
