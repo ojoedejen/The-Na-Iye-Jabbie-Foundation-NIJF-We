@@ -52,7 +52,7 @@ export function JourneySection() {
     <section className="bg-muted py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-12 text-center">OUR JOURNEY</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary mb-12 text-center font-black font-sans">OUR JOURNEY</h2>
         </ScrollReveal>
 
         {/* Mobile/Tablet View (Vertical Stack) */}

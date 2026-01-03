@@ -13,7 +13,7 @@ export function CTASection() {
     >
       <div className="container mx-auto px-4 text-center">
         <ScrollReveal>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 text-balance leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl text-white mb-6 text-balance leading-tight font-sans font-black">
             BECOME PART OF A<br />
             COMPASSIONATE COMMUNITY
           </h2>
