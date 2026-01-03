@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
 interface CampaignCardProps {
+  id: number
   image: string
   title: string
   organization: string
@@ -14,6 +15,7 @@ interface CampaignCardProps {
 }
 
 export function CampaignCard({
+  id,
   image,
   title,
   organization,
@@ -24,40 +26,41 @@ export function CampaignCard({
 }: CampaignCardProps) {
   const percentage = Math.round((raised / goal) * 100)
 
-  const donateUrl = `/donate?campaign=${encodeURIComponent(title)}&title=${encodeURIComponent(title)}&org=${encodeURIComponent(organization)}`
+  const donateUrl = `/donate?campaignId=${id}`
+  const detailUrl = `/campaigns/${id}`
 
   return (
-    <Card className="overflow-hidden border-2 border-gray-900 bg-white rounded-3xl">
+    <Card className="overflow-hidden border-2 border-gray-900 bg-white rounded-3xl h-full flex flex-col">
       {/* Image */}
-      <div className="relative h-64 overflow-hidden">
-        <img src={image || "/placeholder.svg"} alt={title} className="object-cover py-[-56px] py-[-] py-[-16px] h-auto w-full" />
+      <Link href={detailUrl} className="relative h-64 overflow-hidden block group">
+        <img src={image || "/placeholder.svg"} alt={title} className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-105" />
         {/* Category Badge */}
         <div className="absolute top-4 right-4 bg-white rounded-full px-4 py-1.5 flex items-center gap-2">
           <Circle className="w-3 h-3 fill-red-500 text-red-500" />
           <span className="text-sm font-semibold">{category}</span>
         </div>
-      </div>
+      </Link>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
-        <h3 className="text-xl font-bold text-balance">{title}</h3>
+      <div className="p-6 space-y-4 flex flex-col flex-grow">
+        <Link href={detailUrl} className="hover:underline">
+          <h3 className="text-xl font-bold text-balance line-clamp-2">{title}</h3>
+        </Link>
 
         {/* Organization */}
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
-            </svg>
+          <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs text-white font-bold">
+            {organization.charAt(0)}
           </div>
-          <span className="text-sm text-gray-600 font-semibold">{organization}</span>
+          <span className="text-sm text-gray-600 font-semibold truncate">{organization}</span>
         </div>
 
         {/* Progress */}
-        <div className="space-y-2">
+        <div className="space-y-2 mt-auto">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-600">Raised</span>
             <span className="font-semibold">
-              LE {raised.toLocaleString()} ({percentage}%)
+              ${raised.toLocaleString()} ({percentage}%)
             </span>
           </div>
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -68,15 +71,19 @@ export function CampaignCard({
           </div>
         </div>
 
-        <Button asChild className="w-full bg-black text-white hover:bg-gray-900 rounded-full py-6">
-          <Link href={donateUrl}>
-            <Circle className="mr-2 h-5 w-5 fill-[#c8ff5c] text-[#c8ff5c]" />
-            DONATE NOW
-          </Link>
-        </Button>
+        <div className="grid grid-cols-2 gap-3 pt-4">
+          <Button asChild variant="outline" className="w-full rounded-full border-2 border-gray-200 hover:border-black transition-colors">
+            <Link href={detailUrl}>
+              DETAILS
+            </Link>
+          </Button>
+          <Button asChild className="w-full bg-black text-white hover:bg-gray-900 rounded-full">
+            <Link href={donateUrl}>
+              DONATE
+            </Link>
+          </Button>
+        </div>
 
-        {/* Next Button */}
-        
       </div>
     </Card>
   )

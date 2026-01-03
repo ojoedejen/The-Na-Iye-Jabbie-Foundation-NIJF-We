@@ -77,6 +77,7 @@ export function HeroSection() {
               <ScrollReveal delay={400} className="hover:-translate-y-2 transition-transform duration-500">
                 <div className="transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <CampaignCard
+                    id={0}
                     image="/images/nijf-health-awareness.jpg"
                     title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
                     organization="The Na-Iye Jabbie Foundation"
