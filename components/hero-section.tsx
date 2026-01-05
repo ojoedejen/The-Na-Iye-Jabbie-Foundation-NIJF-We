@@ -61,9 +61,9 @@ export function HeroSection() {
                 <div className="pt-4">
                   <p className="text-sm text-muted-foreground mb-4 font-semibold tracking-wider uppercase">Part of TechHealth Africa Initiative</p>
                   <div className="flex flex-wrap items-center gap-8 grayscale opacity-70 hover:opacity-100 transition-opacity duration-500">
-                    <img src="/unicef-logo.png" alt="UNICEF" className="h-8 md:h-10 w-auto object-contain" />
+                    {/* <img src="/unicef-logo.png" alt="UNICEF" className="h-8 md:h-10 w-auto object-contain" />
                     <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-8 md:h-10 w-auto object-contain" />
-                    <img src="/world-health-organization-logo.jpg" alt="WHO" className="h-8 md:h-10 w-auto object-contain" />
+                    <img src="/world-health-organization-logo.jpg" alt="WHO" className="h-8 md:h-10 w-auto object-contain" /> */}
                   </div>
                 </div>
               </ScrollReveal>
@@ -78,7 +78,7 @@ export function HeroSection() {
                 <div className="transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <CampaignCard
                     id={0}
-                    image="/images/nijf-health-awareness.jpg"
+                    image="/images/Say No drugs 1.jpeg"
                     title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
                     organization="The Na-Iye Jabbie Foundation"
                     raised={15400}

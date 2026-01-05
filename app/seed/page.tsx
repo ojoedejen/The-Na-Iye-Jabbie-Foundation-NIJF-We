@@ -1,6 +1,6 @@
 "use client"
 
-import { seedCampaigns } from "@/app/actions/seed-campaigns"
+import { seedCampaignsAdmin } from "@/app/actions/seed-campaigns-admin"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -8,7 +8,7 @@ export default function SeedPage() {
     const [result, setResult] = useState<any>(null)
 
     const handleSeed = async () => {
-        const res = await seedCampaigns()
+        const res = await seedCampaignsAdmin()
         setResult(res)
     }
 

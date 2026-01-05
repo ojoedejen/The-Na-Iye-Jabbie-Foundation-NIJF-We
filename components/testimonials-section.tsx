@@ -6,7 +6,7 @@ export function TestimonialsSection() {
       className="relative py-32 bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(20, 30, 20, 0.8), rgba(20, 30, 20, 0.7)), url(/images/smiling-children.png)",
+          "linear-gradient(rgba(20, 30, 20, 0.8), rgba(20, 30, 20, 0.7)), url('/images/Your service can educate and Help a Kid 2.jpeg')",
       }}
     >
       <div className="container mx-auto px-6">
@@ -35,7 +35,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/50 overflow-hidden border-2 border-white/30">
-                  <img src="/sarah-profile.jpg" alt="Sarah" className="w-full h-full object-cover" />
+                  <img src="/images/Helping the Poor with Food 5.jpeg" alt="Sarah" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Sarah Mitchell</div>
@@ -55,7 +55,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary overflow-hidden">
-                  <img src="/mulyo-profile.jpg" alt="Mulyo" className="w-full h-full object-cover" />
+                  <img src="/images/Helping the Poor with Food 6.jpeg" alt="Mulyo" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-accent-foreground font-black">Mulyo Basuki</div>
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/50 overflow-hidden border-2 border-white/30">
-                  <img src="/placeholder.svg?height=40&width=40" alt="Olivia" className="w-full h-full object-cover" />
+                  <img src="/images/Helping the Poor with Food 4.jpeg" alt="Olivia" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Olivia</div>

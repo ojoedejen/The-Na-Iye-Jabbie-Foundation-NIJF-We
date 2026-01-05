@@ -93,7 +93,7 @@ export default function AboutPage() {
 
         <div className="bg-white border-2 border-black rounded-3xl overflow-hidden">
           <Image
-            src="/nijf-community-gathering.jpg"
+            src="/images/Helping the Poor with Food.jpeg"
             alt="NIJF community gathering"
             width={1200}
             height={500}
@@ -228,7 +228,7 @@ export default function AboutPage() {
             <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">Donate Now</Button>
             <div className="mt-6">
               <Image
-                src="/nijf-donor-impact.jpg"
+                src="/images/Helping the Poor with Food 2.jpeg"
                 alt="NIJF Impact"
                 width={400}
                 height={200}
@@ -262,7 +262,7 @@ export default function AboutPage() {
             </Button>
             <div className="mt-6">
               <Image
-                src="/nijf-volunteer-work.jpg"
+                src="/images/Helping the Poor with Food 3.jpeg"
                 alt="NIJF Volunteers"
                 width={400}
                 height={200}
