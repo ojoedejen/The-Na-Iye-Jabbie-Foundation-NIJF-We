@@ -52,7 +52,7 @@ export function FeaturedCampaigns() {
                 <div className="flex items-center gap-2">
                   <span className="bg-gray-100 border border-gray-200 text-gray-800 rounded-full px-3 py-1 text-xs font-bold">#FLOOD</span>
                 </div>
-                <h3 className="text-xl font-bold h-14 line-clamp-2 font-sans">EMERGENCY RELIEF FOR SUMATRA FLOOD VICTIMS</h3>
+                <h3 className="text-xl font-bold h-14 line-clamp-2 font-sans">AGRICULTURAL PROJECTS TO FEED THE NEEDY & EMPOWER SINGLE MOTHERS</h3>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-blue-500" />
                   <span className="text-sm font-semibold text-gray-600">CareRelief Indonesia</span>

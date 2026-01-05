@@ -40,7 +40,7 @@ export function HeroSection() {
                     className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
                   >
                     <Link href="/donate">
-                      DONATE <ArrowRight className="ml-2 h-5 w-5" />
+                      DONATE<ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                   <Button
