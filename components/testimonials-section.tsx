@@ -6,7 +6,7 @@ export function TestimonialsSection() {
       className="relative py-32 bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(20, 30, 20, 0.8), rgba(20, 30, 20, 0.7)), url('/images/Your service can educate and Help a Kid 2.jpeg')",
+          "linear-gradient(rgba(20, 30, 20, 0.8), rgba(20, 30, 20, 0.7)), url('/images/your-service-can-educate-and-help-a-kid-2.jpeg')",
       }}
     >
       <div className="container mx-auto px-6">

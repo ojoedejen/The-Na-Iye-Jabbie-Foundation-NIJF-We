@@ -8,7 +8,7 @@ export function CTASection() {
     <section
       className="relative py-32 bg-cover bg-center bg-fixed"
       style={{
-        backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/images/smiling-children.png)",
+        backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/images/helping-the-poor-with-food.jpeg)",
       }}
     >
       <div className="container mx-auto text-center px-6">

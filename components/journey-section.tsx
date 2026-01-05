@@ -13,7 +13,7 @@ export function JourneySection() {
     {
       id: 1,
       title: "JOURNEY OF HOPE: HOW YOUR SUPPORT REACHED THOSE IN NEED",
-      image: "/images/Helping the Poor with Food 3.jpeg",
+      image: "/images/helping-the-poor-with-food-3.jpeg",
       description:
         "Follow the inspiring journey of aid workers delivering essential supplies to communities affected by recent disasters. Your donations enabled our team to provide food, water, and medical supplies to over 2,500 families in need.",
       impact: "2,500 families supported",
@@ -22,7 +22,7 @@ export function JourneySection() {
     {
       id: 2,
       title: "VOLUNTEERS IN ACTION: BUILDING STRONGER COMMUNITIES",
-      image: "/images/Helping the Poor with Food.jpeg",
+      image: "/images/helping-the-poor-with-food.jpeg",
       description:
         "Our dedicated volunteers work tirelessly to coordinate and distribute aid packages. Through your generosity, we've established distribution centers that serve as lifelines for communities recovering from crisis.",
       impact: "15 distribution centers",
@@ -31,7 +31,7 @@ export function JourneySection() {
     {
       id: 3,
       title: "COORDINATED RELIEF: TEAMWORK MAKES THE DREAM WORK",
-      image: "/images/Helping the Poor with Food 2.jpeg",
+      image: "/images/helping-the-poor-with-food-2.jpeg",
       description:
         "Behind every successful relief operation is a coordinated team effort. From logistics to on-ground distribution, your support enables seamless operations that ensure aid reaches those who need it most.",
       impact: "10,000+ items distributed",
@@ -40,7 +40,7 @@ export function JourneySection() {
     {
       id: 4,
       title: "DOCUMENTATION & TRANSPARENCY: TRACKING EVERY CONTRIBUTION",
-      image: "/images/Say No drugs 1.jpeg",
+      image: "/images/say-no-drugs-1.jpeg",
       description:
         "We maintain detailed records of every donation and its impact. Our transparent tracking system ensures you can see exactly how your contribution transforms into tangible help for communities in need.",
       impact: "100% transparency",
