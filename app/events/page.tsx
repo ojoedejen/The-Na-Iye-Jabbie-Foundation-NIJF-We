@@ -12,6 +12,7 @@ import { Calendar, MapPin, User } from "lucide-react"
 import { useState } from "react"
 
 export default function EventsPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,6 +22,12 @@ export default function EventsPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("[v0] Form submitted:", formData)
+    setIsSubmitted(true)
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false)
+      setFormData({ name: "", email: "", phone: "" })
+    }, 3000)
   }
 
   return (
@@ -214,54 +221,64 @@ export default function EventsPage() {
                 help communities in need
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="text-sm font-medium mb-2 block">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    placeholder="Enter your name here..."
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="h-12 border-2 border-black rounded-xl"
-                  />
+              {isSubmitted ? (
+                <div className="bg-green-100 border-2 border-green-500 text-green-700 p-6 rounded-2xl animate-in zoom-in-95 duration-300">
+                  <h4 className="font-bold text-lg mb-2">Registration Successful!</h4>
+                  <p>Thank you for registering. We'll be in touch soon with more details about the event.</p>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Label htmlFor="name" className="text-sm font-medium mb-2 block">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      placeholder="Enter your name here..."
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="h-12 border-2 border-black rounded-xl"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Label htmlFor="email" className="text-sm font-medium mb-2 block">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email here..."
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="h-12 border-2 border-black rounded-xl"
-                  />
-                </div>
+                  <div>
+                    <Label htmlFor="email" className="text-sm font-medium mb-2 block">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email here..."
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="h-12 border-2 border-black rounded-xl"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
-                    Phone number
-                  </Label>
-                  <Input
-                    id="phone"
-                    placeholder="Enter your phone number here..."
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="h-12 border-2 border-black rounded-xl"
-                  />
-                </div>
+                  <div>
+                    <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
+                      Phone number
+                    </Label>
+                    <Input
+                      id="phone"
+                      placeholder="Enter your phone number here..."
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="h-12 border-2 border-black rounded-xl"
+                      required
+                    />
+                  </div>
 
-                <Button
-                  type="submit"
-                  className="w-full h-12 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-full font-semibold"
-                >
-                  Register to Event
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    className="w-full h-12 bg-[#2d5f3f] hover:bg-[#234a32] text-white rounded-full font-semibold"
+                  >
+                    Register to Event
+                  </Button>
+                </form>
+              )}
             </div>
 
             {/* Recommended Section */}

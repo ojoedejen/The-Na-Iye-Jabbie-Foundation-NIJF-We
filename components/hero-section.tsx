@@ -61,9 +61,8 @@ export function HeroSection() {
                 <div className="pt-4">
                   <p className="text-sm text-muted-foreground mb-4 font-semibold tracking-wider uppercase">Part of TechHealth Africa Initiative</p>
                   <div className="flex flex-wrap items-center gap-8 grayscale opacity-70 hover:opacity-100 transition-opacity duration-500">
-                    {/* <img src="/unicef-logo.png" alt="UNICEF" className="h-8 md:h-10 w-auto object-contain" />
-                    <img src="/unhcr-logo.jpg" alt="UNHCR" className="h-8 md:h-10 w-auto object-contain" />
-                    <img src="/world-health-organization-logo.jpg" alt="WHO" className="h-8 md:h-10 w-auto object-contain" /> */}
+                    <img src="/techhealth-africa-logo.png" alt="TechHealth Africa" className="h-10 md:h-12 w-auto object-contain" />
+                    <img src="/nijf-logo.png" alt="NIJF" className="h-10 md:h-12 w-auto object-contain" />
                   </div>
                 </div>
               </ScrollReveal>

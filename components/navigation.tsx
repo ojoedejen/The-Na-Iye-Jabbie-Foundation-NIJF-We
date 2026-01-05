@@ -15,13 +15,12 @@ export function Navigation() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-                <div className="grid grid-cols-2 gap-0.5 p-1.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
+              <div className="relative w-12 h-12 transition-transform group-hover:scale-110">
+                <img
+                  src="/nijf-logo.png"
+                  alt="NIJF Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
             </Link>
 
