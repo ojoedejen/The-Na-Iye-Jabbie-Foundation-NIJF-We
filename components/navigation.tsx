@@ -44,7 +44,7 @@ export function Navigation() {
 
             <div className="hidden md:block">
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 rounded-lg transition-all hover:shadow-lg hover:-translate-y-0.5">
-                <Link href="/donate">Donate Now</Link>
+                <Link href="/donate">Donate</Link>
               </Button>
             </div>
 
@@ -72,7 +72,7 @@ export function Navigation() {
                 Contacts
               </Link>
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 w-full rounded-lg">
-                <Link href="/donate">Donate Now</Link>
+                <Link href="/donate">Donate</Link>
               </Button>
             </div>
           )}

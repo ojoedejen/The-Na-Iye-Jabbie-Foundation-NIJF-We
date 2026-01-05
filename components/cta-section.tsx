@@ -29,7 +29,7 @@ export function CTASection() {
               className="border-2 border-white bg-white text-primary hover:bg-white/90 text-base px-8 h-14 rounded-full shadow-lg hover:scale-105 transition-all"
             >
               <Link href="/donate">
-                DONATE NOW <ArrowRight className="ml-2 h-5 w-5" />
+                DONATE <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button

@@ -103,7 +103,7 @@ export default async function CampaignDetailPage({ params }: { params: Promise<{
 
                                 <div className="space-y-3">
                                     <Button size="lg" className="w-full text-lg h-12" asChild>
-                                        <Link href={`/donate?campaignId=${campaign.id}`}>Donate Now</Link>
+                                        <Link href={`/donate?campaignId=${campaign.id}`}>Donate</Link>
                                     </Button>
                                     <Button variant="outline" size="lg" className="w-full text-lg h-12">
                                         <Share2 className="mr-2 h-4 w-4" /> Share Campaign

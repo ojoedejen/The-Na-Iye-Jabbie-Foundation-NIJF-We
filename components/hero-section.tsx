@@ -40,7 +40,7 @@ export function HeroSection() {
                     className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
                   >
                     <Link href="/donate">
-                      DONATE NOW <ArrowRight className="ml-2 h-5 w-5" />
+                      DONATE <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                   <Button
@@ -76,7 +76,7 @@ export function HeroSection() {
               <ScrollReveal delay={400} className="hover:-translate-y-2 transition-transform duration-500">
                 <div className="transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <CampaignCard
-                    id={0}
+                    id={0} o
                     image="/images/say-no-drugs-1.jpeg"
                     title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
                     organization="The Na-Iye Jabbie Foundation"

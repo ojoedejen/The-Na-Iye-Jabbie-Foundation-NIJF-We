@@ -67,7 +67,7 @@ export function FeaturedCampaigns() {
                   </div>
                 </div>
                 <button className="w-full bg-black text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                  DONATE NOW
+                  DONATE
                   <ArrowRight className="h-5 w-5" />
                 </button>
               </div>
@@ -121,7 +121,7 @@ export function FeaturedCampaigns() {
                   </div>
                 </div>
                 <button className="w-full bg-black text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                  DONATE NOW
+                  DONATE
                   <ArrowRight className="h-5 w-5" />
                 </button>
               </div>

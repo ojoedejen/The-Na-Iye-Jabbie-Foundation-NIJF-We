@@ -225,7 +225,7 @@ export default function AboutPage() {
                 <span className="text-sm">Transparent reporting on fund usage</span>
               </li>
             </ul>
-            <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">Donate Now</Button>
+            <Button className="w-full bg-[#ff5722] hover:bg-[#f4511e] text-white rounded-full h-12">Donate</Button>
             <div className="mt-6">
               <Image
                 src="/images/helping-the-poor-with-food-2.jpeg"
