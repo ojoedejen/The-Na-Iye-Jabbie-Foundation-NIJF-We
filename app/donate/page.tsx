@@ -38,7 +38,7 @@ export default function DonatePage() {
       image: "/campaign-water-scarcity.jpg",
     },
     {
-      title: "Emergency Relief for Sumatra Flood Victims",
+      title: "Agricultural Projects To Feed The Needy & Empower Single Mothers",
       date: "15 Oct, 2021",
       readTime: "3 min read",
       image: "/campaign-flood-relief.jpg",
