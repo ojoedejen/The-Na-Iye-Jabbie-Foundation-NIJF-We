@@ -179,7 +179,7 @@ export function JourneySection() {
                         <div className="inline-block px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-semibold mb-4">
                           {project.location}
                         </div>
-                        <h2 className="text-3xl font-serif font-bold mb-4 leading-tight">{project.title}</h2>
+                        <h2 className="text-3xl font-bold mb-4 leading-tight font-sans">{project.title}</h2>
                         <p className="text-lg text-muted-foreground leading-relaxed">{project.description}</p>
                       </div>
 
