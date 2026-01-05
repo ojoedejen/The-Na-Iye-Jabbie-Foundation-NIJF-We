@@ -90,7 +90,7 @@ export default function EventsPage() {
             {/* Hero Image */}
             <div className="rounded-3xl overflow-hidden border-2 border-black">
               <Image
-                src="/images/Event Project.jpeg"
+                src="/images/event-project.jpeg"
                 alt="Environmental cleanup volunteer"
                 width={800}
                 height={500}
@@ -113,7 +113,7 @@ export default function EventsPage() {
             {/* Additional Image */}
             <div className="rounded-3xl overflow-hidden border-2 border-black">
               <Image
-                src="/images/Event Project 2.jpeg"
+                src="/images/event-project-2.jpeg"
                 alt="Environmental cleanup volunteers"
                 width={800}
                 height={400}
@@ -160,7 +160,7 @@ export default function EventsPage() {
             {/* More Images */}
             <div className="rounded-3xl overflow-hidden border-2 border-black">
               <Image
-                src="/images/Event Project Banner.jpeg"
+                src="/images/event-project-banner.jpeg"
                 alt="Nature restoration"
                 width={800}
                 height={400}
@@ -271,7 +271,7 @@ export default function EventsPage() {
                 {[1, 2].map((i) => (
                   <div key={i} className="border-2 border-gray-200 rounded-2xl p-3">
                     <Image
-                      src={`/images/Event Project 2.jpeg`}
+                      src={`/images/event-project-2.jpeg`}
                       alt={`Recommended event ${i}`}
                       width={200}
                       height={120}

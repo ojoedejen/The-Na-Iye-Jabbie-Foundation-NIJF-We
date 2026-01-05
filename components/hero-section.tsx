@@ -78,7 +78,7 @@ export function HeroSection() {
                 <div className="transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <CampaignCard
                     id={0}
-                    image="/images/Say No drugs 1.jpeg"
+                    image="/images/say-no-drugs-1.jpeg"
                     title="KUSH SENSITIZATION & MENTAL HEALTH AWARENESS IN KROO BAY"
                     organization="The Na-Iye Jabbie Foundation"
                     raised={15400}

@@ -35,7 +35,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/50 overflow-hidden border-2 border-white/30">
-                  <img src="/images/Helping the Poor with Food 5.jpeg" alt="Sarah" className="w-full h-full object-cover" />
+                  <img src="/images/helping-the-poor-with-food-5.jpeg" alt="Sarah" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Sarah Mitchell</div>
@@ -55,7 +55,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary overflow-hidden">
-                  <img src="/images/Helping the Poor with Food 6.jpeg" alt="Mulyo" className="w-full h-full object-cover" />
+                  <img src="/images/helping-the-poor-with-food-6.jpeg" alt="Mulyo" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-accent-foreground font-black">Mulyo Basuki</div>
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/50 overflow-hidden border-2 border-white/30">
-                  <img src="/images/Helping the Poor with Food 4.jpeg" alt="Olivia" className="w-full h-full object-cover" />
+                  <img src="/images/helping-the-poor-with-food-4.jpeg" alt="Olivia" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Olivia</div>

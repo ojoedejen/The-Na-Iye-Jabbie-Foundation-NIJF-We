@@ -43,7 +43,7 @@ export function FeaturedCampaigns() {
             <div className="space-y-4 group hover:-translate-y-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/farm 1.jpeg"
+                  src="/images/farm-1.jpeg"
                   alt="Flood disaster"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -79,7 +79,7 @@ export function FeaturedCampaigns() {
             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl group relative h-full">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
               <img
-                src="/images/farm 2.jpeg"
+                src="/images/farm-2.jpeg"
                 alt="Disaster relief"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -95,7 +95,7 @@ export function FeaturedCampaigns() {
             <div className="space-y-4 group hover:-translate-y-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/Your service can educate and Help a Kid.jpeg"
+                  src="/images/your-service-can-educate-and-help-a-kid.jpeg"
                   alt="Evacuation shelter"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

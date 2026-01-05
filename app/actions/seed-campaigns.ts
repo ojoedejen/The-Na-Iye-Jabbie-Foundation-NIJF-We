@@ -10,7 +10,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Providing access to clean and safe drinking water for remote villages in Sierra Leone. Waterborne diseases are a major cause of illness, and this project aims to build wells and filtration systems.",
         organization_name: "Water For All",
         status: "active",
-        image_url: "/images/Event Project.jpeg"
+        image_url: "/images/event-project.jpeg"
     },
     {
         title: "School Supplies for 500 Children",
@@ -19,7 +19,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Equipping underprivileged children with essential school supplies including backpacks, notebooks, and uniforms to ensure they can attend school with dignity and readiness.",
         organization_name: "Education First",
         status: "active",
-        image_url: "/images/Your service can educate and Help a Kid.jpeg"
+        image_url: "/images/your-service-can-educate-and-help-a-kid.jpeg"
     },
     {
         title: "Community Solar Power Initiative",
@@ -28,7 +28,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Installing solar panels in community centers to provide reliable electricity for lighting and charging devices, fostering better education and economic activities after dark.",
         organization_name: "Solar Vil",
         status: "active",
-        image_url: "/images/Event Project Banner.jpeg"
+        image_url: "/images/event-project-banner.jpeg"
     },
     {
         title: "Women's Agricultural Cooperative",
@@ -37,7 +37,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Empowering women farmers with seeds, tools, and training to start a cooperative farm. This will increase food security and provide sustainable income for their families.",
         organization_name: "Women of Earth",
         status: "active",
-        image_url: "/images/farm 1.jpeg"
+        image_url: "/images/farm-1.jpeg"
     },
     {
         title: "Mobile Health Clinic for Remote Areas",
@@ -46,7 +46,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Funding a mobile clinic vehicle to reach isolated communities with basic healthcare, vaccinations, and maternal health checks.",
         organization_name: "Red Cross SL",
         status: "active",
-        image_url: "/images/Helping the Poor with Food 6.jpeg"
+        image_url: "/images/helping-the-poor-with-food-6.jpeg"
     },
     {
         title: "Tech Skills Training for Youth",
@@ -55,7 +55,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "A 6-month bootcamp teaching coding and digital literacy to unemployed youth, opening doors to remote work and modern career paths.",
         organization_name: "TechUp Africa",
         status: "active",
-        image_url: "/images/Your service can educate and Help a Kid 2.jpeg"
+        image_url: "/images/your-service-can-educate-and-help-a-kid-2.jpeg"
     },
     {
         title: "Reforestation of Degraded Lands",
@@ -64,7 +64,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Planting 10,000 native trees to restore biodiversity, prevent soil erosion, and combat climate change in affected regions.",
         organization_name: "Green Future",
         status: "active",
-        image_url: "/images/farm 2.jpeg"
+        image_url: "/images/farm-2.jpeg"
     },
     {
         title: "Emergency Food Relief Fund",
@@ -73,7 +73,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Stockpiling essential food items to quickly respond to families displaced by seasonal floods or other emergencies.",
         organization_name: "Relief Now",
         status: "active",
-        image_url: "/images/Helping the Poor with Food.jpeg"
+        image_url: "/images/helping-the-poor-with-food.jpeg"
     },
     {
         title: "Local Library Rehabilitation",
@@ -82,7 +82,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Renovating a dilapidated community library and stocking it with new books and educational resources for all ages.",
         organization_name: "Readers Club",
         status: "active",
-        image_url: "/images/Event Project 2.jpeg"
+        image_url: "/images/event-project-2.jpeg"
     },
     {
         title: "Sanitation Facilities for Schools",
@@ -91,7 +91,7 @@ const SAMPLE_CAMPAIGNS = [
         description: "Building separate, hygienic toilets for boys and girls in 3 local schools to improve sanitation and keep girls in school.",
         organization_name: "Hygiene Heroes",
         status: "active",
-        image_url: "/images/Helping the Poor with Food 3.jpeg"
+        image_url: "/images/helping-the-poor-with-food-3.jpeg"
     }
 ]
 

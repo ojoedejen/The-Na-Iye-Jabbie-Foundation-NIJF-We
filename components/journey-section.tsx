@@ -65,7 +65,7 @@ export function JourneySection() {
               >
                 <div className="aspect-video relative">
                   <img
-                    src={project.image || "/images/Helping the Poor with Food 4.jpeg"}
+                    src={project.image || "/images/helping-the-poor-with-food-4.jpeg"}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -130,7 +130,7 @@ export function JourneySection() {
                 <ScrollReveal delay={index * 150} duration={800}>
                   <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl group">
                     <img
-                      src={project.image || "/images/Helping the Poor with Food 4.jpeg"}
+                      src={project.image || "/images/helping-the-poor-with-food-4.jpeg"}
                       alt={project.title}
                       className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -168,7 +168,7 @@ export function JourneySection() {
                   <div key={project.id} className="flex flex-col md:flex-row">
                     <div className="w-full md:w-1/2 h-64 md:h-auto relative">
                       <img
-                        src={project.image || "/images/Helping the Poor with Food 4.jpeg"}
+                        src={project.image || "/images/helping-the-poor-with-food-4.jpeg"}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
