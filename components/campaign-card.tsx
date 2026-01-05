@@ -33,7 +33,7 @@ export function CampaignCard({
     <Card className="overflow-hidden border-2 border-gray-900 bg-white rounded-3xl h-full flex flex-col">
       {/* Image */}
       <Link href={detailUrl} className="relative h-64 overflow-hidden block group">
-        <img src={image || "/placeholder.svg"} alt={title} className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-105" />
+        <img src={image || "/placeholder.svg"} alt={title} className="object-cover transition-transform duration-500 group-hover:scale-105 h-96 w-full" />
         {/* Category Badge */}
         <div className="absolute top-4 right-4 bg-white rounded-full px-4 py-1.5 flex items-center gap-2">
           <Circle className="w-3 h-3 fill-red-500 text-red-500" />
