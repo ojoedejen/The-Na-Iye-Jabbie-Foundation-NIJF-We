@@ -87,18 +87,18 @@ export default function ContactPage() {
             <div className="bg-white border-2 border-black rounded-3xl p-8 shadow-md">
               <h2 className="text-2xl font-bold mb-4">Head Quarter Office</h2>
               <address className="not-italic text-gray-600 space-y-2 text-lg">
-                <p>34 Marina View,</p>
+                <p>18 Cornhill Street Wellington</p>
                 <p>Downtown Core Planning Area,</p>
-                <p>Singapore 018963</p>
+                <p>Sierra Leone</p>
               </address>
             </div>
 
             <div className="bg-primary text-primary-foreground border-2 border-black rounded-3xl p-8 shadow-md">
               <h2 className="text-2xl font-bold mb-4">Direct Communication</h2>
               <div className="space-y-2 text-lg opacity-90">
-                <p>Email: contact@nijf.org</p>
-                <p>Phone: +232 XX XXX XXX</p>
-                <p>Hours: Mon-Fri 9am - 5pm</p>
+                <p>Email: nijfoundation2022@gmail.com</p>
+                <p>Phone: +232 76670574</p>
+                <p>Hours: Always Available</p>
               </div>
             </div>
           </div>

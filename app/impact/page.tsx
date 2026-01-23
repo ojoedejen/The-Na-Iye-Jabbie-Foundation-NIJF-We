@@ -18,7 +18,7 @@ export default function ImpactPage() {
             <div className="text-gray-600">Success Rate</div>
           </div>
           <div className="bg-white border-2 border-black rounded-3xl p-8">
-            <div className="text-5xl font-bold mb-2">$125M+</div>
+            <div className="text-5xl font-bold mb-2">$5,000</div>
             <div className="text-gray-600">Total Funded</div>
           </div>
           <div className="bg-white border-2 border-black rounded-3xl p-8">

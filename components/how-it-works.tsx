@@ -75,7 +75,7 @@ export function HowItWorks() {
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Success rate</div>
                 </div>
                 <div>
-                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-sans">$12+</div>
+                  <div className="text-5xl md:text-6xl mb-2 text-primary font-black font-sans">$5,000+</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide font-semibold">Total Funded</div>
                 </div>
               </div>

@@ -62,8 +62,8 @@ export default function EventsPage() {
               <User className="w-6 h-6" />
               <h3 className="text-xl font-bold">Event Organiser</h3>
             </div>
-            <p className="text-lg font-semibold mb-1">David James</p>
-            <p className="text-gray-700">davi@james45@gmail.com</p>
+            <p className="text-lg font-semibold mb-1">Madie Gassama</p>
+            <p className="text-gray-700">madisongassama958@gmail.com</p>
           </div>
 
           {/* Event Venue */}
@@ -72,8 +72,8 @@ export default function EventsPage() {
               <MapPin className="w-6 h-6" />
               <h3 className="text-xl font-bold">Event Venue</h3>
             </div>
-            <p className="text-lg font-semibold mb-1">Drak Spurt, San</p>
-            <p className="text-gray-700">Francisco, CA 94528</p>
+            <p className="text-lg font-semibold mb-1">Wellington</p>
+            <p className="text-gray-700">Sierra Leone</p>
           </div>
         </div>
 

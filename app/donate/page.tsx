@@ -16,7 +16,7 @@ import { createDonation } from "@/app/actions/donation-actions"
 export default function DonatePage() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const initialCampaign = searchParams.get("title") || "Water Scarcity In Maiduguri: Lifeline Ramadan Campaign 2021"
+  const initialCampaign = searchParams.get("title") || "Street Feeding and COVID19 Sanitization 2021"
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedCampaign, setSelectedCampaign] = useState(initialCampaign)
@@ -32,22 +32,22 @@ export default function DonatePage() {
 
   const campaigns = [
     {
-      title: "Water Scarcity In Maiduguri: Lifeline Ramadan Campaign 2021",
+      title: "Street Feeding and COVID19 Sanitization 2021",
       date: "23 Sep, 2021",
       readTime: "2 min read",
-      image: "/campaign-water-scarcity.jpg",
+      image: "public/images/campaign-water-scarcity.jpg",
     },
     {
       title: "Agricultural Projects To Feed The Needy & Empower Single Mothers",
       date: "15 Oct, 2021",
       readTime: "3 min read",
-      image: "/campaign-flood-relief.jpg",
+      image: "public/images/campaign-flood-relief.jpg",
     },
     {
       title: "Support Evacuation After Mount Eruption",
       date: "28 Nov, 2021",
       readTime: "2 min read",
-      image: "/campaign-volcano-relief.jpg",
+      image: "public/images/campaign-volcano-relief.jpg",
     },
   ]
 
@@ -182,9 +182,8 @@ export default function DonatePage() {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentSlide ? "w-8 bg-black" : "w-2 bg-gray-300"
-                    }`}
+                    className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-black" : "w-2 bg-gray-300"
+                      }`}
                   />
                 ))}
               </div>
@@ -287,11 +286,10 @@ export default function DonatePage() {
                         setAmount(preset)
                         setCustomAmount("")
                       }}
-                      className={`py-3 px-4 rounded-xl border-2 font-semibold transition-all ${
-                        amount === preset
+                      className={`py-3 px-4 rounded-xl border-2 font-semibold transition-all ${amount === preset
                           ? "bg-[#c8ff5c] border-black"
                           : "bg-[#f5f5f0] border-gray-300 hover:border-black"
-                      }`}
+                        }`}
                     >
                       {currency}
                       {preset}
